@@ -1,0 +1,1542 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>NodeList 接口，HTMLCollection 接口 · JavaScript中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tony">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../source/css/website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="parentnode.html" />
+    
+    
+    <link rel="prev" href="node.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Tony-Code","repo":"javascript","type":"star","size":"small","count":true}]};
+    </script>
+
+    
+        <link rel="shortcut icon" href='../../source/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../source/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../source/images/favicon.ico'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../source/images/favicon.ico">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../source/images/favicon.ico">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../basic/introduction.html">
+            
+                <a href="../basic/introduction.html">
+            
+                    
+                    入门篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../basic/history.html">
+            
+                <a href="../basic/history.html">
+            
+                    
+                    历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../basic/grammar.html">
+            
+                <a href="../basic/grammar.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../types/general.html">
+            
+                <a href="../types/general.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../types/null-undefined-boolean.html">
+            
+                <a href="../types/null-undefined-boolean.html">
+            
+                    
+                    null，undefined 和布尔值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../types/number.html">
+            
+                <a href="../types/number.html">
+            
+                    
+                    数值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../types/string.html">
+            
+                <a href="../types/string.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../types/object.html">
+            
+                <a href="../types/object.html">
+            
+                    
+                    对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../types/function.html">
+            
+                <a href="../types/function.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../types/array.html">
+            
+                <a href="../types/array.html">
+            
+                    
+                    数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../operators/arithmetic.html">
+            
+                <a href="../operators/arithmetic.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../operators/comparison.html">
+            
+                <a href="../operators/comparison.html">
+            
+                    
+                    比较运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../operators/boolean.html">
+            
+                <a href="../operators/boolean.html">
+            
+                    
+                    布尔运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../operators/bit.html">
+            
+                <a href="../operators/bit.html">
+            
+                    
+                    二进制位运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../operators/priority.html">
+            
+                <a href="../operators/priority.html">
+            
+                    
+                    其他运算符，运算顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../features/conversion.html">
+            
+                <a href="../features/conversion.html">
+            
+                    
+                    语法专题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../features/error.html">
+            
+                <a href="../features/error.html">
+            
+                    
+                    错误处理机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../features/style.html">
+            
+                <a href="../features/style.html">
+            
+                    
+                    编程风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../features/console.html">
+            
+                <a href="../features/console.html">
+            
+                    
+                    console 对象与控制台
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../stdlib/object.html">
+            
+                <a href="../stdlib/object.html">
+            
+                    
+                    标准库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../stdlib/attributes.html">
+            
+                <a href="../stdlib/attributes.html">
+            
+                    
+                    属性描述对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../stdlib/array.html">
+            
+                <a href="../stdlib/array.html">
+            
+                    
+                    Array 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../stdlib/wrapper.html">
+            
+                <a href="../stdlib/wrapper.html">
+            
+                    
+                    包装对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../stdlib/boolean.html">
+            
+                <a href="../stdlib/boolean.html">
+            
+                    
+                    Boolean 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../stdlib/number.html">
+            
+                <a href="../stdlib/number.html">
+            
+                    
+                    Number 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../stdlib/string.html">
+            
+                <a href="../stdlib/string.html">
+            
+                    
+                    String 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../stdlib/math.html">
+            
+                <a href="../stdlib/math.html">
+            
+                    
+                    Math 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../stdlib/date.html">
+            
+                <a href="../stdlib/date.html">
+            
+                    
+                    Date 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../stdlib/regexp.html">
+            
+                <a href="../stdlib/regexp.html">
+            
+                    
+                    RegExp 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../stdlib/json.html">
+            
+                <a href="../stdlib/json.html">
+            
+                    
+                    JSON 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../oop/new.html">
+            
+                <a href="../oop/new.html">
+            
+                    
+                    面向对象编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../oop/this.html">
+            
+                <a href="../oop/this.html">
+            
+                    
+                    this 关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../oop/prototype.html">
+            
+                <a href="../oop/prototype.html">
+            
+                    
+                    对象的继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../oop/object.html">
+            
+                <a href="../oop/object.html">
+            
+                    
+                    Object 对象的相关方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../oop/strict.html">
+            
+                <a href="../oop/strict.html">
+            
+                    
+                    严格模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../async/general.html">
+            
+                <a href="../async/general.html">
+            
+                    
+                    异步操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../async/timer.html">
+            
+                <a href="../async/timer.html">
+            
+                    
+                    定时器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../async/promise.html">
+            
+                <a href="../async/promise.html">
+            
+                    
+                    Promise 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="general.html">
+            
+                <a href="general.html">
+            
+                    
+                    DOM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="node.html">
+            
+                <a href="node.html">
+            
+                    
+                    Node 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.2" data-path="nodelist.html">
+            
+                <a href="nodelist.html">
+            
+                    
+                    NodeList 接口，HTMLCollection 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="parentnode.html">
+            
+                <a href="parentnode.html">
+            
+                    
+                    ParentNode 接口，ChildNode 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="document.html">
+            
+                <a href="document.html">
+            
+                    
+                    Document 节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="element.html">
+            
+                <a href="element.html">
+            
+                    
+                    Element 节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="attributes.html">
+            
+                <a href="attributes.html">
+            
+                    
+                    属性的操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="text.html">
+            
+                <a href="text.html">
+            
+                    
+                    Text 节点和 DocumentFragment 节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="css.html">
+            
+                <a href="css.html">
+            
+                    
+                    CSS 操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="mutationobserver.html">
+            
+                <a href="mutationobserver.html">
+            
+                    
+                    Mutation Observer API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../events/eventtarget.html">
+            
+                <a href="../events/eventtarget.html">
+            
+                    
+                    事件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../events/model.html">
+            
+                <a href="../events/model.html">
+            
+                    
+                    事件模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../events/event.html">
+            
+                <a href="../events/event.html">
+            
+                    
+                    Event 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../events/mouse.html">
+            
+                <a href="../events/mouse.html">
+            
+                    
+                    鼠标事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../events/keyboard.html">
+            
+                <a href="../events/keyboard.html">
+            
+                    
+                    键盘事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../events/progress.html">
+            
+                <a href="../events/progress.html">
+            
+                    
+                    进度事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../events/form.html">
+            
+                <a href="../events/form.html">
+            
+                    
+                    表单事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../events/touch.html">
+            
+                <a href="../events/touch.html">
+            
+                    
+                    触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../events/drag.html">
+            
+                <a href="../events/drag.html">
+            
+                    
+                    拖拉事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../events/common.html">
+            
+                <a href="../events/common.html">
+            
+                    
+                    其他常见事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../events/globaleventhandlers.html">
+            
+                <a href="../events/globaleventhandlers.html">
+            
+                    
+                    GlobalEventHandlers 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bom/engine.html">
+            
+                <a href="../bom/engine.html">
+            
+                    
+                    浏览器模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../bom/window.html">
+            
+                <a href="../bom/window.html">
+            
+                    
+                    window 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../bom/navigator.html">
+            
+                <a href="../bom/navigator.html">
+            
+                    
+                    Navigator 对象，Screen 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../bom/cookie.html">
+            
+                <a href="../bom/cookie.html">
+            
+                    
+                    Cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../bom/xmlhttprequest.html">
+            
+                <a href="../bom/xmlhttprequest.html">
+            
+                    
+                    XMLHttpRequest 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../bom/same-origin.html">
+            
+                <a href="../bom/same-origin.html">
+            
+                    
+                    同源限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../bom/cors.html">
+            
+                <a href="../bom/cors.html">
+            
+                    
+                    CORS 通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../bom/storage.html">
+            
+                <a href="../bom/storage.html">
+            
+                    
+                    Storage 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../bom/history.html">
+            
+                <a href="../bom/history.html">
+            
+                    
+                    History 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../bom/location.html">
+            
+                <a href="../bom/location.html">
+            
+                    
+                    Location 对象，URL 对象，URLSearchParams 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../bom/arraybuffer.html">
+            
+                <a href="../bom/arraybuffer.html">
+            
+                    
+                    ArrayBuffer 对象，Blob 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.11" data-path="../bom/file.html">
+            
+                <a href="../bom/file.html">
+            
+                    
+                    File 对象，FileList 对象，FileReader 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.12" data-path="../bom/form.html">
+            
+                <a href="../bom/form.html">
+            
+                    
+                    表单，FormData 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.13" data-path="../bom/indexeddb.html">
+            
+                <a href="../bom/indexeddb.html">
+            
+                    
+                    IndexedDB API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.14" data-path="../bom/webworker.html">
+            
+                <a href="../bom/webworker.html">
+            
+                    
+                    Web Worker
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../elements/a.html">
+            
+                <a href="../elements/a.html">
+            
+                    
+                    网页元素接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../elements/img.html">
+            
+                <a href="../elements/img.html">
+            
+                    
+                    img
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../elements/form.html">
+            
+                <a href="../elements/form.html">
+            
+                    
+                    form
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../elements/input.html">
+            
+                <a href="../elements/input.html">
+            
+                    
+                    input
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../elements/button.html">
+            
+                <a href="../elements/button.html">
+            
+                    
+                    button
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../elements/option.html">
+            
+                <a href="../elements/option.html">
+            
+                    
+                    option
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../elements/video.html">
+            
+                <a href="../elements/video.html">
+            
+                    
+                    video,audio
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >NodeList 接口，HTMLCollection 接口</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h1 id="nodelist-&#x63A5;&#x53E3;&#xFF0C;htmlcollection-&#x63A5;&#x53E3;">NodeList &#x63A5;&#x53E3;&#xFF0C;HTMLCollection &#x63A5;&#x53E3;</h1>
+<p>&#x8282;&#x70B9;&#x90FD;&#x662F;&#x5355;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x6709;&#x65F6;&#x9700;&#x8981;&#x4E00;&#x79CD;&#x6570;&#x636E;&#x7ED3;&#x6784;&#xFF0C;&#x80FD;&#x591F;&#x5BB9;&#x7EB3;&#x591A;&#x4E2A;&#x8282;&#x70B9;&#x3002;DOM &#x63D0;&#x4F9B;&#x4E24;&#x79CD;&#x8282;&#x70B9;&#x96C6;&#x5408;&#xFF0C;&#x7528;&#x4E8E;&#x5BB9;&#x7EB3;&#x591A;&#x4E2A;&#x8282;&#x70B9;&#xFF1A;<code>NodeList</code>&#x548C;<code>HTMLCollection</code>&#x3002;</p>
+<p>&#x8FD9;&#x4E24;&#x79CD;&#x96C6;&#x5408;&#x90FD;&#x5C5E;&#x4E8E;&#x63A5;&#x53E3;&#x89C4;&#x8303;&#x3002;&#x8BB8;&#x591A; DOM &#x5C5E;&#x6027;&#x548C;&#x65B9;&#x6CD5;&#xFF0C;&#x8FD4;&#x56DE;&#x7684;&#x7ED3;&#x679C;&#x662F;<code>NodeList</code>&#x5B9E;&#x4F8B;&#x6216;<code>HTMLCollection</code>&#x5B9E;&#x4F8B;&#x3002;&#x4E3B;&#x8981;&#x533A;&#x522B;&#x662F;&#xFF0C;<code>NodeList</code>&#x53EF;&#x4EE5;&#x5305;&#x542B;&#x5404;&#x79CD;&#x7C7B;&#x578B;&#x7684;&#x8282;&#x70B9;&#xFF0C;<code>HTMLCollection</code>&#x53EA;&#x80FD;&#x5305;&#x542B; HTML &#x5143;&#x7D20;&#x8282;&#x70B9;&#x3002;</p>
+<h2 id="nodelist-&#x63A5;&#x53E3;">NodeList &#x63A5;&#x53E3;</h2>
+<h3 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h3>
+<p><code>NodeList</code>&#x5B9E;&#x4F8B;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x6570;&#x7EC4;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x7684;&#x6210;&#x5458;&#x662F;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x3002;&#x901A;&#x8FC7;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5F97;&#x5230;<code>NodeList</code>&#x5B9E;&#x4F8B;&#x3002;</p>
+<ul>
+<li><code>Node.childNodes</code></li>
+<li><code>document.querySelectorAll()</code>&#x7B49;&#x8282;&#x70B9;&#x641C;&#x7D22;&#x65B9;&#x6CD5;</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-built_in">document</span>.body.childNodes <span class="hljs-keyword">instanceof</span> NodeList <span class="hljs-comment">// true</span>
+</code></pre>
+<p><code>NodeList</code>&#x5B9E;&#x4F8B;&#x5F88;&#x50CF;&#x6570;&#x7EC4;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>length</code>&#x5C5E;&#x6027;&#x548C;<code>forEach</code>&#x65B9;&#x6CD5;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5B83;&#x4E0D;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x4E0D;&#x80FD;&#x4F7F;&#x7528;<code>pop</code>&#x6216;<code>push</code>&#x4E4B;&#x7C7B;&#x6570;&#x7EC4;&#x7279;&#x6709;&#x7684;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> children = <span class="hljs-built_in">document</span>.body.childNodes;
+
+<span class="hljs-built_in">Array</span>.isArray(children) <span class="hljs-comment">// false</span>
+
+children.length <span class="hljs-comment">// 34</span>
+children.forEach(<span class="hljs-built_in">console</span>.log)
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;NodeList &#x5B9E;&#x4F8B;<code>children</code>&#x4E0D;&#x662F;&#x6570;&#x7EC4;&#xFF0C;&#x4F46;&#x662F;&#x5177;&#x6709;<code>length</code>&#x5C5E;&#x6027;&#x548C;<code>forEach</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#x5982;&#x679C;<code>NodeList</code>&#x5B9E;&#x4F8B;&#x8981;&#x4F7F;&#x7528;&#x6570;&#x7EC4;&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x8F6C;&#x4E3A;&#x771F;&#x6B63;&#x7684;&#x6570;&#x7EC4;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> children = <span class="hljs-built_in">document</span>.body.childNodes;
+<span class="hljs-keyword">var</span> nodeArr = <span class="hljs-built_in">Array</span>.prototype.slice.call(children);
+</code></pre>
+<p>&#x9664;&#x4E86;&#x4F7F;&#x7528;<code>forEach</code>&#x65B9;&#x6CD5;&#x904D;&#x5386; NodeList &#x5B9E;&#x4F8B;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>for</code>&#x5FAA;&#x73AF;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> children = <span class="hljs-built_in">document</span>.body.childNodes;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; children.length; i++) {
+  <span class="hljs-keyword">var</span> item = children[i];
+}
+</code></pre>
+<p>&#x6CE8;&#x610F;&#xFF0C;NodeList &#x5B9E;&#x4F8B;&#x53EF;&#x80FD;&#x662F;&#x52A8;&#x6001;&#x96C6;&#x5408;&#xFF0C;&#x4E5F;&#x53EF;&#x80FD;&#x662F;&#x9759;&#x6001;&#x96C6;&#x5408;&#x3002;&#x6240;&#x8C13;&#x52A8;&#x6001;&#x96C6;&#x5408;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x6D3B;&#x7684;&#x96C6;&#x5408;&#xFF0C;DOM &#x5220;&#x9664;&#x6216;&#x65B0;&#x589E;&#x4E00;&#x4E2A;&#x76F8;&#x5173;&#x8282;&#x70B9;&#xFF0C;&#x90FD;&#x4F1A;&#x7ACB;&#x523B;&#x53CD;&#x6620;&#x5728; NodeList &#x5B9E;&#x4F8B;&#x3002;&#x76EE;&#x524D;&#xFF0C;&#x53EA;&#x6709;<code>Node.childNodes</code>&#x8FD4;&#x56DE;&#x7684;&#x662F;&#x4E00;&#x4E2A;&#x52A8;&#x6001;&#x96C6;&#x5408;&#xFF0C;&#x5176;&#x4ED6;&#x7684; NodeList &#x90FD;&#x662F;&#x9759;&#x6001;&#x96C6;&#x5408;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> children = <span class="hljs-built_in">document</span>.body.childNodes;
+children.length <span class="hljs-comment">// 18</span>
+<span class="hljs-built_in">document</span>.body.appendChild(<span class="hljs-built_in">document</span>.createElement(<span class="hljs-string">&apos;p&apos;</span>));
+children.length <span class="hljs-comment">// 19</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x6587;&#x6863;&#x589E;&#x52A0;&#x4E00;&#x4E2A;&#x5B50;&#x8282;&#x70B9;&#xFF0C;NodeList &#x5B9E;&#x4F8B;<code>children</code>&#x7684;<code>length</code>&#x5C5E;&#x6027;&#x5C31;&#x589E;&#x52A0;&#x4E86;1&#x3002;</p>
+<h3 id="nodelistprototypelength">NodeList.prototype.length</h3>
+<p><code>length</code>&#x5C5E;&#x6027;&#x8FD4;&#x56DE; NodeList &#x5B9E;&#x4F8B;&#x5305;&#x542B;&#x7684;&#x8282;&#x70B9;&#x6570;&#x91CF;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">document</span>.querySelectorAll(<span class="hljs-string">&apos;xxx&apos;</span>).length
+<span class="hljs-comment">// 0</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;<code>document.querySelectorAll</code>&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; NodeList &#x96C6;&#x5408;&#x3002;&#x5BF9;&#x4E8E;&#x90A3;&#x4E9B;&#x4E0D;&#x5B58;&#x5728;&#x7684; HTML &#x6807;&#x7B7E;&#xFF0C;<code>length</code>&#x5C5E;&#x6027;&#x8FD4;&#x56DE;<code>0</code>&#x3002;</p>
+<h3 id="nodelistprototypeforeach">NodeList.prototype.forEach()</h3>
+<p><code>forEach</code>&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x904D;&#x5386; NodeList &#x7684;&#x6240;&#x6709;&#x6210;&#x5458;&#x3002;&#x5B83;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x6BCF;&#x4E00;&#x8F6E;&#x904D;&#x5386;&#x5C31;&#x6267;&#x884C;&#x4E00;&#x6B21;&#x8FD9;&#x4E2A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x7528;&#x6CD5;&#x4E0E;&#x6570;&#x7EC4;&#x5B9E;&#x4F8B;&#x7684;<code>forEach</code>&#x65B9;&#x6CD5;&#x5B8C;&#x5168;&#x4E00;&#x81F4;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> children = <span class="hljs-built_in">document</span>.body.childNodes;
+children.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">f</span>(<span class="hljs-params">item, i, list</span>) </span>{
+  <span class="hljs-comment">// ...</span>
+}, <span class="hljs-keyword">this</span>);
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x56DE;&#x8C03;&#x51FD;&#x6570;<code>f</code>&#x7684;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x4F9D;&#x6B21;&#x662F;&#x5F53;&#x524D;&#x6210;&#x5458;&#x3001;&#x4F4D;&#x7F6E;&#x548C;&#x5F53;&#x524D; NodeList &#x5B9E;&#x4F8B;&#x3002;<code>forEach</code>&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7528;&#x4E8E;&#x7ED1;&#x5B9A;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x5185;&#x90E8;&#x7684;<code>this</code>&#xFF0C;&#x8BE5;&#x53C2;&#x6570;&#x53EF;&#x7701;&#x7565;&#x3002;</p>
+<h3 id="nodelistprototypeitem">NodeList.prototype.item()</h3>
+<p><code>item</code>&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x503C;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x8868;&#x793A;&#x6210;&#x5458;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x8FD4;&#x56DE;&#x8BE5;&#x4F4D;&#x7F6E;&#x4E0A;&#x7684;&#x6210;&#x5458;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">document</span>.body.childNodes.item(<span class="hljs-number">0</span>)
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;<code>item(0)</code>&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x53C2;&#x6570;&#x503C;&#x5927;&#x4E8E;&#x5B9E;&#x9645;&#x957F;&#x5EA6;&#xFF0C;&#x6216;&#x8005;&#x7D22;&#x5F15;&#x4E0D;&#x5408;&#x6CD5;&#xFF08;&#x6BD4;&#x5982;&#x8D1F;&#x6570;&#xFF09;&#xFF0C;<code>item</code>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;<code>null</code>&#x3002;&#x5982;&#x679C;&#x7701;&#x7565;&#x53C2;&#x6570;&#xFF0C;<code>item</code>&#x65B9;&#x6CD5;&#x4F1A;&#x62A5;&#x9519;&#x3002;</p>
+<p>&#x6240;&#x6709;&#x7C7B;&#x4F3C;&#x6570;&#x7EC4;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x65B9;&#x62EC;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;&#x53D6;&#x51FA;&#x6210;&#x5458;&#x3002;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x90FD;&#x662F;&#x4F7F;&#x7528;&#x65B9;&#x62EC;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;&#xFF0C;&#x800C;&#x4E0D;&#x4F7F;&#x7528;<code>item</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">document</span>.body.childNodes[<span class="hljs-number">0</span>]
+</code></pre>
+<h3 id="nodelistprototypekeys&#xFF0C;nodelistprototypevalues&#xFF0C;nodelistprototypeentries">NodeList.prototype.keys()&#xFF0C;NodeList.prototype.values()&#xFF0C;NodeList.prototype.entries()</h3>
+<p>&#x8FD9;&#x4E09;&#x4E2A;&#x65B9;&#x6CD5;&#x90FD;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A; ES6 &#x7684;&#x904D;&#x5386;&#x5668;&#x5BF9;&#x8C61;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>for...of</code>&#x5FAA;&#x73AF;&#x904D;&#x5386;&#x83B7;&#x53D6;&#x6BCF;&#x4E00;&#x4E2A;&#x6210;&#x5458;&#x7684;&#x4FE1;&#x606F;&#x3002;&#x533A;&#x522B;&#x5728;&#x4E8E;&#xFF0C;<code>keys()</code>&#x8FD4;&#x56DE;&#x952E;&#x540D;&#x7684;&#x904D;&#x5386;&#x5668;&#xFF0C;<code>values()</code>&#x8FD4;&#x56DE;&#x952E;&#x503C;&#x7684;&#x904D;&#x5386;&#x5668;&#xFF0C;<code>entries()</code>&#x8FD4;&#x56DE;&#x7684;&#x904D;&#x5386;&#x5668;&#x540C;&#x65F6;&#x5305;&#x542B;&#x952E;&#x540D;&#x548C;&#x952E;&#x503C;&#x7684;&#x4FE1;&#x606F;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> children = <span class="hljs-built_in">document</span>.body.childNodes;
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> key <span class="hljs-keyword">of</span> children.keys()) {
+  <span class="hljs-built_in">console</span>.log(key);
+}
+<span class="hljs-comment">// 0</span>
+<span class="hljs-comment">// 1</span>
+<span class="hljs-comment">// 2</span>
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> value <span class="hljs-keyword">of</span> children.values()) {
+  <span class="hljs-built_in">console</span>.log(value);
+}
+<span class="hljs-comment">// #text</span>
+<span class="hljs-comment">// &lt;script&gt;</span>
+<span class="hljs-comment">// ...</span>
+
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> entry <span class="hljs-keyword">of</span> children.entries()) {
+  <span class="hljs-built_in">console</span>.log(entry);
+}
+<span class="hljs-comment">// Array [ 0, #text ]</span>
+<span class="hljs-comment">// Array [ 1, &lt;script&gt; ]</span>
+<span class="hljs-comment">// ...</span>
+</code></pre>
+<h2 id="htmlcollection-&#x63A5;&#x53E3;">HTMLCollection &#x63A5;&#x53E3;</h2>
+<h3 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h3>
+<p><code>HTMLCollection</code>&#x662F;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x5BF9;&#x8C61;&#x7684;&#x96C6;&#x5408;&#xFF0C;&#x53EA;&#x80FD;&#x5305;&#x542B;&#x5143;&#x7D20;&#x8282;&#x70B9;&#xFF08;element&#xFF09;&#xFF0C;&#x4E0D;&#x80FD;&#x5305;&#x542B;&#x5176;&#x4ED6;&#x7C7B;&#x578B;&#x7684;&#x8282;&#x70B9;&#x3002;&#x5B83;&#x7684;&#x8FD4;&#x56DE;&#x503C;&#x662F;&#x4E00;&#x4E2A;&#x7C7B;&#x4F3C;&#x6570;&#x7EC4;&#x7684;&#x5BF9;&#x8C61;&#xFF0C;&#x4F46;&#x662F;&#x4E0E;<code>NodeList</code>&#x63A5;&#x53E3;&#x4E0D;&#x540C;&#xFF0C;<code>HTMLCollection</code>&#x6CA1;&#x6709;<code>forEach</code>&#x65B9;&#x6CD5;&#xFF0C;&#x53EA;&#x80FD;&#x4F7F;&#x7528;<code>for</code>&#x5FAA;&#x73AF;&#x904D;&#x5386;&#x3002;</p>
+<p>&#x8FD4;&#x56DE;<code>HTMLCollection</code>&#x5B9E;&#x4F8B;&#x7684;&#xFF0C;&#x4E3B;&#x8981;&#x662F;&#x4E00;&#x4E9B;<code>Document</code>&#x5BF9;&#x8C61;&#x7684;&#x96C6;&#x5408;&#x5C5E;&#x6027;&#xFF0C;&#x6BD4;&#x5982;<code>document.links</code>&#x3001;<code>docuement.forms</code>&#x3001;<code>document.images</code>&#x7B49;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">document</span>.links <span class="hljs-keyword">instanceof</span> HTMLCollection <span class="hljs-comment">// true</span>
+</code></pre>
+<p><code>HTMLCollection</code>&#x5B9E;&#x4F8B;&#x90FD;&#x662F;&#x52A8;&#x6001;&#x96C6;&#x5408;&#xFF0C;&#x8282;&#x70B9;&#x7684;&#x53D8;&#x5316;&#x4F1A;&#x5B9E;&#x65F6;&#x53CD;&#x6620;&#x5728;&#x96C6;&#x5408;&#x4E2D;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x6709;<code>id</code>&#x6216;<code>name</code>&#x5C5E;&#x6027;&#xFF0C;&#x90A3;&#x4E48;<code>HTMLCollection</code>&#x5B9E;&#x4F8B;&#x4E0A;&#x9762;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;<code>id</code>&#x5C5E;&#x6027;&#x6216;<code>name</code>&#x5C5E;&#x6027;&#x5F15;&#x7528;&#x8BE5;&#x8282;&#x70B9;&#x5143;&#x7D20;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;<code>null</code>&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// HTML &#x4EE3;&#x7801;&#x5982;&#x4E0B;</span>
+<span class="hljs-comment">// &lt;img id=&quot;pic&quot; src=&quot;http://example.com/foo.jpg&quot;&gt;</span>
+
+<span class="hljs-keyword">var</span> pic = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;pic&apos;</span>);
+<span class="hljs-built_in">document</span>.images.pic === pic <span class="hljs-comment">// true</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;<code>document.images</code>&#x662F;&#x4E00;&#x4E2A;<code>HTMLCollection</code>&#x5B9E;&#x4F8B;&#xFF0C;&#x53EF;&#x4EE5;&#x901A;&#x8FC7;<code>&lt;img&gt;</code>&#x5143;&#x7D20;&#x7684;<code>id</code>&#x5C5E;&#x6027;&#x503C;&#xFF0C;&#x4ECE;<code>HTMLCollection</code>&#x5B9E;&#x4F8B;&#x4E0A;&#x53D6;&#x5230;&#x8FD9;&#x4E2A;&#x5143;&#x7D20;&#x3002;</p>
+<h3 id="htmlcollectionprototypelength">HTMLCollection.prototype.length</h3>
+<p><code>length</code>&#x5C5E;&#x6027;&#x8FD4;&#x56DE;<code>HTMLCollection</code>&#x5B9E;&#x4F8B;&#x5305;&#x542B;&#x7684;&#x6210;&#x5458;&#x6570;&#x91CF;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">document</span>.links.length <span class="hljs-comment">// 18</span>
+</code></pre>
+<h3 id="htmlcollectionprototypeitem">HTMLCollection.prototype.item()</h3>
+<p><code>item</code>&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x6574;&#x6570;&#x503C;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x8868;&#x793A;&#x6210;&#x5458;&#x7684;&#x4F4D;&#x7F6E;&#xFF0C;&#x8FD4;&#x56DE;&#x8BE5;&#x4F4D;&#x7F6E;&#x4E0A;&#x7684;&#x6210;&#x5458;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> c = <span class="hljs-built_in">document</span>.images;
+<span class="hljs-keyword">var</span> img0 = c.item(<span class="hljs-number">0</span>);
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;<code>item(0)</code>&#x8868;&#x793A;&#x8FD4;&#x56DE;0&#x53F7;&#x4F4D;&#x7F6E;&#x7684;&#x6210;&#x5458;&#x3002;&#x7531;&#x4E8E;&#x65B9;&#x62EC;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;&#x4E5F;&#x5177;&#x6709;&#x540C;&#x6837;&#x4F5C;&#x7528;&#xFF0C;&#x800C;&#x4E14;&#x4F7F;&#x7528;&#x66F4;&#x65B9;&#x4FBF;&#xFF0C;&#x6240;&#x4EE5;&#x4E00;&#x822C;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x603B;&#x662F;&#x4F7F;&#x7528;&#x65B9;&#x62EC;&#x53F7;&#x8FD0;&#x7B97;&#x7B26;&#x3002;</p>
+<p>&#x5982;&#x679C;&#x53C2;&#x6570;&#x503C;&#x8D85;&#x51FA;&#x6210;&#x5458;&#x6570;&#x91CF;&#x6216;&#x8005;&#x4E0D;&#x5408;&#x6CD5;&#xFF08;&#x6BD4;&#x5982;&#x5C0F;&#x4E8E;0&#xFF09;&#xFF0C;&#x90A3;&#x4E48;<code>item</code>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;<code>null</code>&#x3002;</p>
+<h3 id="htmlcollectionprototypenameditem">HTMLCollection.prototype.namedItem()</h3>
+<p><code>namedItem</code>&#x65B9;&#x6CD5;&#x7684;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x8868;&#x793A;<code>id</code>&#x5C5E;&#x6027;&#x6216;<code>name</code>&#x5C5E;&#x6027;&#x7684;&#x503C;&#xFF0C;&#x8FD4;&#x56DE;&#x5BF9;&#x5E94;&#x7684;&#x5143;&#x7D20;&#x8282;&#x70B9;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5BF9;&#x5E94;&#x7684;&#x8282;&#x70B9;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;<code>null</code>&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// HTML &#x4EE3;&#x7801;&#x5982;&#x4E0B;</span>
+<span class="hljs-comment">// &lt;img id=&quot;pic&quot; src=&quot;http://example.com/foo.jpg&quot;&gt;</span>
+
+<span class="hljs-keyword">var</span> pic = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;pic&apos;</span>);
+<span class="hljs-built_in">document</span>.images.namedItem(<span class="hljs-string">&apos;pic&apos;</span>) === pic <span class="hljs-comment">// true</span>
+</code></pre>
+<footer class="page-footer"><span class="copyright">&#xA9; Tony all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-5-15 11:35:02
+</span></footer></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="node.html" class="navigation navigation-prev " aria-label="Previous page: Node 接口">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="parentnode.html" class="navigation navigation-next " aria-label="Next page: ParentNode 接口，ChildNode 接口">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"NodeList 接口，HTMLCollection 接口","level":"1.9.2","depth":2,"next":{"title":"ParentNode 接口，ChildNode 接口","level":"1.9.3","depth":2,"path":"docs/dom/parentnode.md","ref":"docs/dom/parentnode.md","articles":[]},"previous":{"title":"Node 接口","level":"1.9.1","depth":2,"path":"docs/dom/node.md","ref":"docs/dom/node.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","chapter-fold","code","favicon","tbfed-pagefooter","-sharing","sharing-plus","github","github-buttons","lightbox"],"styles":{"website":"/source/css/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Tony","modify_label":"该文件修订时间：","modify_format":"2019-5-15 11:35:02"},"chapter-fold":{},"github":{"url":"https://github.com/Tony-Code"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/source/images/favicon.ico","bookmark":"/source/images/favicon.ico","appleTouch":"/source/images/favicon.ico","appleTouchMore":{"120x120":"/source/images/favicon.ico","180x180":"/source/images/favicon.ico"}},"lightbox":{"jquery":true},"github-buttons":{"buttons":[{"user":"Tony-Code","repo":"javascript","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["weibo","qq","qzone","douban"],"douban":false,"facebook":true,"weibo":false,"twitter":true,"pocket":false,"google":true,"qzone":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"tony","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"JavaScript中文文档","language":"zh-hans","gitbook":"3.2.3","description":"JavaScript文档"},"file":{"path":"docs/dom/nodelist.md","mtime":"2019-01-09T00:43:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T06:37:39.706Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/jquery.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

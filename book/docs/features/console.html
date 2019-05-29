@@ -1,0 +1,1799 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>console 对象与控制台 · JavaScript中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tony">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../source/css/website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../stdlib/object.html" />
+    
+    
+    <link rel="prev" href="style.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Tony-Code","repo":"javascript","type":"star","size":"small","count":true}]};
+    </script>
+
+    
+        <link rel="shortcut icon" href='../../source/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../source/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../source/images/favicon.ico'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../source/images/favicon.ico">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../source/images/favicon.ico">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../basic/introduction.html">
+            
+                <a href="../basic/introduction.html">
+            
+                    
+                    入门篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../basic/history.html">
+            
+                <a href="../basic/history.html">
+            
+                    
+                    历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../basic/grammar.html">
+            
+                <a href="../basic/grammar.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../types/general.html">
+            
+                <a href="../types/general.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../types/null-undefined-boolean.html">
+            
+                <a href="../types/null-undefined-boolean.html">
+            
+                    
+                    null，undefined 和布尔值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../types/number.html">
+            
+                <a href="../types/number.html">
+            
+                    
+                    数值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../types/string.html">
+            
+                <a href="../types/string.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../types/object.html">
+            
+                <a href="../types/object.html">
+            
+                    
+                    对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../types/function.html">
+            
+                <a href="../types/function.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../types/array.html">
+            
+                <a href="../types/array.html">
+            
+                    
+                    数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../operators/arithmetic.html">
+            
+                <a href="../operators/arithmetic.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../operators/comparison.html">
+            
+                <a href="../operators/comparison.html">
+            
+                    
+                    比较运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../operators/boolean.html">
+            
+                <a href="../operators/boolean.html">
+            
+                    
+                    布尔运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../operators/bit.html">
+            
+                <a href="../operators/bit.html">
+            
+                    
+                    二进制位运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../operators/priority.html">
+            
+                <a href="../operators/priority.html">
+            
+                    
+                    其他运算符，运算顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="conversion.html">
+            
+                <a href="conversion.html">
+            
+                    
+                    语法专题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="error.html">
+            
+                <a href="error.html">
+            
+                    
+                    错误处理机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="style.html">
+            
+                <a href="style.html">
+            
+                    
+                    编程风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.5.3" data-path="console.html">
+            
+                <a href="console.html">
+            
+                    
+                    console 对象与控制台
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../stdlib/object.html">
+            
+                <a href="../stdlib/object.html">
+            
+                    
+                    标准库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../stdlib/attributes.html">
+            
+                <a href="../stdlib/attributes.html">
+            
+                    
+                    属性描述对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../stdlib/array.html">
+            
+                <a href="../stdlib/array.html">
+            
+                    
+                    Array 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../stdlib/wrapper.html">
+            
+                <a href="../stdlib/wrapper.html">
+            
+                    
+                    包装对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../stdlib/boolean.html">
+            
+                <a href="../stdlib/boolean.html">
+            
+                    
+                    Boolean 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../stdlib/number.html">
+            
+                <a href="../stdlib/number.html">
+            
+                    
+                    Number 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../stdlib/string.html">
+            
+                <a href="../stdlib/string.html">
+            
+                    
+                    String 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../stdlib/math.html">
+            
+                <a href="../stdlib/math.html">
+            
+                    
+                    Math 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../stdlib/date.html">
+            
+                <a href="../stdlib/date.html">
+            
+                    
+                    Date 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../stdlib/regexp.html">
+            
+                <a href="../stdlib/regexp.html">
+            
+                    
+                    RegExp 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../stdlib/json.html">
+            
+                <a href="../stdlib/json.html">
+            
+                    
+                    JSON 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../oop/new.html">
+            
+                <a href="../oop/new.html">
+            
+                    
+                    面向对象编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../oop/this.html">
+            
+                <a href="../oop/this.html">
+            
+                    
+                    this 关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../oop/prototype.html">
+            
+                <a href="../oop/prototype.html">
+            
+                    
+                    对象的继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../oop/object.html">
+            
+                <a href="../oop/object.html">
+            
+                    
+                    Object 对象的相关方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../oop/strict.html">
+            
+                <a href="../oop/strict.html">
+            
+                    
+                    严格模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../async/general.html">
+            
+                <a href="../async/general.html">
+            
+                    
+                    异步操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../async/timer.html">
+            
+                <a href="../async/timer.html">
+            
+                    
+                    定时器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../async/promise.html">
+            
+                <a href="../async/promise.html">
+            
+                    
+                    Promise 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="../dom/general.html">
+            
+                <a href="../dom/general.html">
+            
+                    
+                    DOM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="../dom/node.html">
+            
+                <a href="../dom/node.html">
+            
+                    
+                    Node 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="../dom/nodelist.html">
+            
+                <a href="../dom/nodelist.html">
+            
+                    
+                    NodeList 接口，HTMLCollection 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="../dom/parentnode.html">
+            
+                <a href="../dom/parentnode.html">
+            
+                    
+                    ParentNode 接口，ChildNode 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="../dom/document.html">
+            
+                <a href="../dom/document.html">
+            
+                    
+                    Document 节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="../dom/element.html">
+            
+                <a href="../dom/element.html">
+            
+                    
+                    Element 节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="../dom/attributes.html">
+            
+                <a href="../dom/attributes.html">
+            
+                    
+                    属性的操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="../dom/text.html">
+            
+                <a href="../dom/text.html">
+            
+                    
+                    Text 节点和 DocumentFragment 节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="../dom/css.html">
+            
+                <a href="../dom/css.html">
+            
+                    
+                    CSS 操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.9" data-path="../dom/mutationobserver.html">
+            
+                <a href="../dom/mutationobserver.html">
+            
+                    
+                    Mutation Observer API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../events/eventtarget.html">
+            
+                <a href="../events/eventtarget.html">
+            
+                    
+                    事件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../events/model.html">
+            
+                <a href="../events/model.html">
+            
+                    
+                    事件模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../events/event.html">
+            
+                <a href="../events/event.html">
+            
+                    
+                    Event 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../events/mouse.html">
+            
+                <a href="../events/mouse.html">
+            
+                    
+                    鼠标事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../events/keyboard.html">
+            
+                <a href="../events/keyboard.html">
+            
+                    
+                    键盘事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../events/progress.html">
+            
+                <a href="../events/progress.html">
+            
+                    
+                    进度事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../events/form.html">
+            
+                <a href="../events/form.html">
+            
+                    
+                    表单事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../events/touch.html">
+            
+                <a href="../events/touch.html">
+            
+                    
+                    触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../events/drag.html">
+            
+                <a href="../events/drag.html">
+            
+                    
+                    拖拉事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../events/common.html">
+            
+                <a href="../events/common.html">
+            
+                    
+                    其他常见事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../events/globaleventhandlers.html">
+            
+                <a href="../events/globaleventhandlers.html">
+            
+                    
+                    GlobalEventHandlers 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bom/engine.html">
+            
+                <a href="../bom/engine.html">
+            
+                    
+                    浏览器模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../bom/window.html">
+            
+                <a href="../bom/window.html">
+            
+                    
+                    window 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../bom/navigator.html">
+            
+                <a href="../bom/navigator.html">
+            
+                    
+                    Navigator 对象，Screen 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../bom/cookie.html">
+            
+                <a href="../bom/cookie.html">
+            
+                    
+                    Cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../bom/xmlhttprequest.html">
+            
+                <a href="../bom/xmlhttprequest.html">
+            
+                    
+                    XMLHttpRequest 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../bom/same-origin.html">
+            
+                <a href="../bom/same-origin.html">
+            
+                    
+                    同源限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../bom/cors.html">
+            
+                <a href="../bom/cors.html">
+            
+                    
+                    CORS 通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../bom/storage.html">
+            
+                <a href="../bom/storage.html">
+            
+                    
+                    Storage 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../bom/history.html">
+            
+                <a href="../bom/history.html">
+            
+                    
+                    History 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../bom/location.html">
+            
+                <a href="../bom/location.html">
+            
+                    
+                    Location 对象，URL 对象，URLSearchParams 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../bom/arraybuffer.html">
+            
+                <a href="../bom/arraybuffer.html">
+            
+                    
+                    ArrayBuffer 对象，Blob 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.11" data-path="../bom/file.html">
+            
+                <a href="../bom/file.html">
+            
+                    
+                    File 对象，FileList 对象，FileReader 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.12" data-path="../bom/form.html">
+            
+                <a href="../bom/form.html">
+            
+                    
+                    表单，FormData 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.13" data-path="../bom/indexeddb.html">
+            
+                <a href="../bom/indexeddb.html">
+            
+                    
+                    IndexedDB API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.14" data-path="../bom/webworker.html">
+            
+                <a href="../bom/webworker.html">
+            
+                    
+                    Web Worker
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../elements/a.html">
+            
+                <a href="../elements/a.html">
+            
+                    
+                    网页元素接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../elements/img.html">
+            
+                <a href="../elements/img.html">
+            
+                    
+                    img
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../elements/form.html">
+            
+                <a href="../elements/form.html">
+            
+                    
+                    form
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../elements/input.html">
+            
+                <a href="../elements/input.html">
+            
+                    
+                    input
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../elements/button.html">
+            
+                <a href="../elements/button.html">
+            
+                    
+                    button
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../elements/option.html">
+            
+                <a href="../elements/option.html">
+            
+                    
+                    option
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../elements/video.html">
+            
+                <a href="../elements/video.html">
+            
+                    
+                    video,audio
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >console 对象与控制台</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h1 id="console-&#x5BF9;&#x8C61;&#x4E0E;&#x63A7;&#x5236;&#x53F0;">console &#x5BF9;&#x8C61;&#x4E0E;&#x63A7;&#x5236;&#x53F0;</h1>
+<h2 id="console-&#x5BF9;&#x8C61;">console &#x5BF9;&#x8C61;</h2>
+<p><code>console</code>&#x5BF9;&#x8C61;&#x662F; JavaScript &#x7684;&#x539F;&#x751F;&#x5BF9;&#x8C61;&#xFF0C;&#x5B83;&#x6709;&#x70B9;&#x50CF; Unix &#x7CFB;&#x7EDF;&#x7684;&#x6807;&#x51C6;&#x8F93;&#x51FA;<code>stdout</code>&#x548C;&#x6807;&#x51C6;&#x9519;&#x8BEF;<code>stderr</code>&#xFF0C;&#x53EF;&#x4EE5;&#x8F93;&#x51FA;&#x5404;&#x79CD;&#x4FE1;&#x606F;&#x5230;&#x63A7;&#x5236;&#x53F0;&#xFF0C;&#x5E76;&#x4E14;&#x8FD8;&#x63D0;&#x4F9B;&#x4E86;&#x5F88;&#x591A;&#x6709;&#x7528;&#x7684;&#x8F85;&#x52A9;&#x65B9;&#x6CD5;&#x3002;</p>
+<p><code>console</code>&#x7684;&#x5E38;&#x89C1;&#x7528;&#x9014;&#x6709;&#x4E24;&#x4E2A;&#x3002;</p>
+<ul>
+<li>&#x8C03;&#x8BD5;&#x7A0B;&#x5E8F;&#xFF0C;&#x663E;&#x793A;&#x7F51;&#x9875;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x65F6;&#x7684;&#x9519;&#x8BEF;&#x4FE1;&#x606F;&#x3002;</li>
+<li>&#x63D0;&#x4F9B;&#x4E86;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x884C;&#x63A5;&#x53E3;&#xFF0C;&#x7528;&#x6765;&#x4E0E;&#x7F51;&#x9875;&#x4EE3;&#x7801;&#x4E92;&#x52A8;&#x3002;</li>
+</ul>
+<p><code>console</code>&#x5BF9;&#x8C61;&#x7684;&#x6D4F;&#x89C8;&#x5668;&#x5B9E;&#x73B0;&#xFF0C;&#x5305;&#x542B;&#x5728;&#x6D4F;&#x89C8;&#x5668;&#x81EA;&#x5E26;&#x7684;&#x5F00;&#x53D1;&#x5DE5;&#x5177;&#x4E4B;&#x4E2D;&#x3002;&#x4EE5; Chrome &#x6D4F;&#x89C8;&#x5668;&#x7684;&#x201C;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x201D;&#xFF08;Developer Tools&#xFF09;&#x4E3A;&#x4F8B;&#xFF0C;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E0B;&#x9762;&#x4E09;&#x79CD;&#x65B9;&#x6CD5;&#x7684;&#x6253;&#x5F00;&#x5B83;&#x3002;</p>
+<ol>
+<li>&#x6309; F12 &#x6216;&#x8005;<code>Control + Shift + i</code>&#xFF08;PC&#xFF09;/ <code>Command + Option + i</code>&#xFF08;Mac&#xFF09;&#x3002;</li>
+<li>&#x6D4F;&#x89C8;&#x5668;&#x83DC;&#x5355;&#x9009;&#x62E9;&#x201C;&#x5DE5;&#x5177;/&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x201D;&#x3002;</li>
+<li>&#x5728;&#x4E00;&#x4E2A;&#x9875;&#x9762;&#x5143;&#x7D20;&#x4E0A;&#xFF0C;&#x6253;&#x5F00;&#x53F3;&#x952E;&#x83DC;&#x5355;&#xFF0C;&#x9009;&#x62E9;&#x5176;&#x4E2D;&#x7684;&#x201C;Inspect Element&#x201D;&#x3002;</li>
+</ol>
+<p>&#x6253;&#x5F00;&#x5F00;&#x53D1;&#x8005;&#x5DE5;&#x5177;&#x4EE5;&#x540E;&#xFF0C;&#x9876;&#x7AEF;&#x6709;&#x591A;&#x4E2A;&#x9762;&#x677F;&#x3002;</p>
+<ul>
+<li><strong>Elements</strong>&#xFF1A;&#x67E5;&#x770B;&#x7F51;&#x9875;&#x7684; HTML &#x6E90;&#x7801;&#x548C; CSS &#x4EE3;&#x7801;&#x3002;</li>
+<li><strong>Resources</strong>&#xFF1A;&#x67E5;&#x770B;&#x7F51;&#x9875;&#x52A0;&#x8F7D;&#x7684;&#x5404;&#x79CD;&#x8D44;&#x6E90;&#x6587;&#x4EF6;&#xFF08;&#x6BD4;&#x5982;&#x4EE3;&#x7801;&#x6587;&#x4EF6;&#x3001;&#x5B57;&#x4F53;&#x6587;&#x4EF6; CSS &#x6587;&#x4EF6;&#x7B49;&#xFF09;&#xFF0C;&#x4EE5;&#x53CA;&#x5728;&#x786C;&#x76D8;&#x4E0A;&#x521B;&#x5EFA;&#x7684;&#x5404;&#x79CD;&#x5185;&#x5BB9;&#xFF08;&#x6BD4;&#x5982;&#x672C;&#x5730;&#x7F13;&#x5B58;&#x3001;Cookie&#x3001;Local Storage&#x7B49;&#xFF09;&#x3002;</li>
+<li><strong>Network</strong>&#xFF1A;&#x67E5;&#x770B;&#x7F51;&#x9875;&#x7684; HTTP &#x901A;&#x4FE1;&#x60C5;&#x51B5;&#x3002;</li>
+<li><strong>Sources</strong>&#xFF1A;&#x67E5;&#x770B;&#x7F51;&#x9875;&#x52A0;&#x8F7D;&#x7684;&#x811A;&#x672C;&#x6E90;&#x7801;&#x3002;</li>
+<li><strong>Timeline</strong>&#xFF1A;&#x67E5;&#x770B;&#x5404;&#x79CD;&#x7F51;&#x9875;&#x884C;&#x4E3A;&#x968F;&#x65F6;&#x95F4;&#x53D8;&#x5316;&#x7684;&#x60C5;&#x51B5;&#x3002;</li>
+<li><strong>Performance</strong>&#xFF1A;&#x67E5;&#x770B;&#x7F51;&#x9875;&#x7684;&#x6027;&#x80FD;&#x60C5;&#x51B5;&#xFF0C;&#x6BD4;&#x5982; CPU &#x548C;&#x5185;&#x5B58;&#x6D88;&#x8017;&#x3002;</li>
+<li><strong>Console</strong>&#xFF1A;&#x7528;&#x6765;&#x8FD0;&#x884C; JavaScript &#x547D;&#x4EE4;&#x3002;</li>
+</ul>
+<p>&#x8FD9;&#x4E9B;&#x9762;&#x677F;&#x90FD;&#x6709;&#x5404;&#x81EA;&#x7684;&#x7528;&#x9014;&#xFF0C;&#x4EE5;&#x4E0B;&#x53EA;&#x4ECB;&#x7ECD;<code>Console</code>&#x9762;&#x677F;&#xFF08;&#x53C8;&#x79F0;&#x4E3A;&#x63A7;&#x5236;&#x53F0;&#xFF09;&#x3002;</p>
+<p><code>Console</code>&#x9762;&#x677F;&#x57FA;&#x672C;&#x4E0A;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x547D;&#x4EE4;&#x884C;&#x7A97;&#x53E3;&#xFF0C;&#x4F60;&#x53EF;&#x4EE5;&#x5728;&#x63D0;&#x793A;&#x7B26;&#x4E0B;&#xFF0C;&#x952E;&#x5165;&#x5404;&#x79CD;&#x547D;&#x4EE4;&#x3002;</p>
+<h2 id="console-&#x5BF9;&#x8C61;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;">console &#x5BF9;&#x8C61;&#x7684;&#x9759;&#x6001;&#x65B9;&#x6CD5;</h2>
+<p><code>console</code>&#x5BF9;&#x8C61;&#x63D0;&#x4F9B;&#x7684;&#x5404;&#x79CD;&#x9759;&#x6001;&#x65B9;&#x6CD5;&#xFF0C;&#x7528;&#x6765;&#x4E0E;&#x63A7;&#x5236;&#x53F0;&#x7A97;&#x53E3;&#x4E92;&#x52A8;&#x3002;</p>
+<h3 id="consolelog&#xFF0C;consoleinfo&#xFF0C;consoledebug">console.log()&#xFF0C;console.info()&#xFF0C;console.debug()</h3>
+<p><code>console.log</code>&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x3002;&#x5B83;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x6216;&#x591A;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5C06;&#x5B83;&#x4EEC;&#x8FDE;&#x63A5;&#x8D77;&#x6765;&#x8F93;&#x51FA;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Hello World&apos;</span>)
+<span class="hljs-comment">// Hello World</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;b&apos;</span>, <span class="hljs-string">&apos;c&apos;</span>)
+<span class="hljs-comment">// a b c</span>
+</code></pre>
+<p><code>console.log</code>&#x65B9;&#x6CD5;&#x4F1A;&#x81EA;&#x52A8;&#x5728;&#x6BCF;&#x6B21;&#x8F93;&#x51FA;&#x7684;&#x7ED3;&#x5C3E;&#xFF0C;&#x6DFB;&#x52A0;&#x6362;&#x884C;&#x7B26;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-number">1</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">2</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-number">3</span>);
+<span class="hljs-comment">// 1</span>
+<span class="hljs-comment">// 2</span>
+<span class="hljs-comment">// 3</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x683C;&#x5F0F;&#x5B57;&#x7B26;&#x4E32;&#xFF08;&#x4F7F;&#x7528;&#x4E86;&#x683C;&#x5F0F;&#x5360;&#x4F4D;&#x7B26;&#xFF09;&#xFF0C;<code>console.log</code>&#x65B9;&#x6CD5;&#x5C06;&#x4F9D;&#x6B21;&#x7528;&#x540E;&#x9762;&#x7684;&#x53C2;&#x6570;&#x66FF;&#x6362;&#x5360;&#x4F4D;&#x7B26;&#xFF0C;&#x7136;&#x540E;&#x518D;&#x8FDB;&#x884C;&#x8F93;&#x51FA;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos; %s + %s = %s&apos;</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-number">2</span>)
+<span class="hljs-comment">//  1 + 1 = 2</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;<code>console.log</code>&#x65B9;&#x6CD5;&#x7684;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x6709;&#x4E09;&#x4E2A;&#x5360;&#x4F4D;&#x7B26;&#xFF08;<code>%s</code>&#xFF09;&#xFF0C;&#x7B2C;&#x4E8C;&#x3001;&#x4E09;&#x3001;&#x56DB;&#x4E2A;&#x53C2;&#x6570;&#x4F1A;&#x5728;&#x663E;&#x793A;&#x65F6;&#xFF0C;&#x4F9D;&#x6B21;&#x66FF;&#x6362;&#x6389;&#x8FD9;&#x4E2A;&#x4E09;&#x4E2A;&#x5360;&#x4F4D;&#x7B26;&#x3002;</p>
+<p><code>console.log</code>&#x65B9;&#x6CD5;&#x652F;&#x6301;&#x4EE5;&#x4E0B;&#x5360;&#x4F4D;&#x7B26;&#xFF0C;&#x4E0D;&#x540C;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#x5FC5;&#x987B;&#x4F7F;&#x7528;&#x5BF9;&#x5E94;&#x7684;&#x5360;&#x4F4D;&#x7B26;&#x3002;</p>
+<ul>
+<li><code>%s</code> &#x5B57;&#x7B26;&#x4E32;</li>
+<li><code>%d</code> &#x6574;&#x6570;</li>
+<li><code>%i</code> &#x6574;&#x6570;</li>
+<li><code>%f</code> &#x6D6E;&#x70B9;&#x6570;</li>
+<li><code>%o</code> &#x5BF9;&#x8C61;&#x7684;&#x94FE;&#x63A5;</li>
+<li><code>%c</code> CSS &#x683C;&#x5F0F;&#x5B57;&#x7B26;&#x4E32;</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> number = <span class="hljs-number">11</span> * <span class="hljs-number">9</span>;
+<span class="hljs-keyword">var</span> color = <span class="hljs-string">&apos;red&apos;</span>;
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;%d %s balloons&apos;</span>, number, color);
+<span class="hljs-comment">// 99 red balloons</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x6570;&#x503C;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x5360;&#x4F4D;&#x7B26;&#x662F;<code>%d</code>&#xFF0C;&#x7B2C;&#x4E09;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x5360;&#x4F4D;&#x7B26;&#x662F;<code>%s</code>&#x3002;</p>
+<p>&#x4F7F;&#x7528;<code>%c</code>&#x5360;&#x4F4D;&#x7B26;&#x65F6;&#xFF0C;&#x5BF9;&#x5E94;&#x7684;&#x53C2;&#x6570;&#x5FC5;&#x987B;&#x662F; CSS &#x4EE3;&#x7801;&#xFF0C;&#x7528;&#x6765;&#x5BF9;&#x8F93;&#x51FA;&#x5185;&#x5BB9;&#x8FDB;&#x884C; CSS &#x6E32;&#x67D3;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(
+  <span class="hljs-string">&apos;%cThis text is styled!&apos;</span>,
+  <span class="hljs-string">&apos;color: red; background: yellow; font-size: 24px;&apos;</span>
+)
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x540E;&#xFF0C;&#x8F93;&#x51FA;&#x7684;&#x5185;&#x5BB9;&#x5C06;&#x663E;&#x793A;&#x4E3A;&#x9EC4;&#x5E95;&#x7EA2;&#x5B57;&#x3002;</p>
+<p><code>console.log</code>&#x65B9;&#x6CD5;&#x7684;&#x4E24;&#x79CD;&#x53C2;&#x6570;&#x683C;&#x5F0F;&#xFF0C;&#x53EF;&#x4EE5;&#x7ED3;&#x5408;&#x5728;&#x4E00;&#x8D77;&#x4F7F;&#x7528;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos; %s + %s &apos;</span>, <span class="hljs-number">1</span>, <span class="hljs-number">1</span>, <span class="hljs-string">&apos;= 2&apos;</span>)
+<span class="hljs-comment">// 1 + 1  = 2</span>
+</code></pre>
+<p>&#x5982;&#x679C;&#x53C2;&#x6570;&#x662F;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;<code>console.log</code>&#x4F1A;&#x663E;&#x793A;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x503C;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log({foo: <span class="hljs-string">&apos;bar&apos;</span>})
+<span class="hljs-comment">// Object {foo: &quot;bar&quot;}</span>
+<span class="hljs-built_in">console</span>.log(<span class="hljs-built_in">Date</span>)
+<span class="hljs-comment">// function Date() { [native code] }</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x8F93;&#x51FA;<code>Date</code>&#x5BF9;&#x8C61;&#x7684;&#x503C;&#xFF0C;&#x7ED3;&#x679C;&#x4E3A;&#x4E00;&#x4E2A;&#x6784;&#x9020;&#x51FD;&#x6570;&#x3002;</p>
+<p><code>console.info</code>&#x662F;<code>console.log</code>&#x65B9;&#x6CD5;&#x7684;&#x522B;&#x540D;&#xFF0C;&#x7528;&#x6CD5;&#x5B8C;&#x5168;&#x4E00;&#x6837;&#x3002;&#x53EA;&#x4E0D;&#x8FC7;<code>console.info</code>&#x65B9;&#x6CD5;&#x4F1A;&#x5728;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x7684;&#x524D;&#x9762;&#xFF0C;&#x52A0;&#x4E0A;&#x4E00;&#x4E2A;&#x84DD;&#x8272;&#x56FE;&#x6807;&#x3002;</p>
+<p><code>console.debug</code>&#x65B9;&#x6CD5;&#x4E0E;<code>console.log</code>&#x65B9;&#x6CD5;&#x7C7B;&#x4F3C;&#xFF0C;&#x4F1A;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x8C03;&#x8BD5;&#x4FE1;&#x606F;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x9ED8;&#x8BA4;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;<code>console.debug</code>&#x8F93;&#x51FA;&#x7684;&#x4FE1;&#x606F;&#x4E0D;&#x4F1A;&#x663E;&#x793A;&#xFF0C;&#x53EA;&#x6709;&#x5728;&#x6253;&#x5F00;&#x663E;&#x793A;&#x7EA7;&#x522B;&#x5728;<code>verbose</code>&#x7684;&#x60C5;&#x51B5;&#x4E0B;&#xFF0C;&#x624D;&#x4F1A;&#x663E;&#x793A;&#x3002;</p>
+<p><code>console</code>&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x65B9;&#x6CD5;&#xFF0C;&#x90FD;&#x53EF;&#x4EE5;&#x88AB;&#x8986;&#x76D6;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x53EF;&#x4EE5;&#x6309;&#x7167;&#x81EA;&#x5DF1;&#x7684;&#x9700;&#x8981;&#xFF0C;&#x5B9A;&#x4E49;<code>console.log</code>&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-javascript">[<span class="hljs-string">&apos;log&apos;</span>, <span class="hljs-string">&apos;info&apos;</span>, <span class="hljs-string">&apos;warn&apos;</span>, <span class="hljs-string">&apos;error&apos;</span>].forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">method</span>) </span>{
+  <span class="hljs-built_in">console</span>[method] = <span class="hljs-built_in">console</span>[method].bind(
+    <span class="hljs-built_in">console</span>,
+    <span class="hljs-keyword">new</span> <span class="hljs-built_in">Date</span>().toISOString()
+  );
+});
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&quot;&#x51FA;&#x9519;&#x4E86;&#xFF01;&quot;</span>);
+<span class="hljs-comment">// 2014-05-18T09:00.000Z &#x51FA;&#x9519;&#x4E86;&#xFF01;</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x8868;&#x793A;&#xFF0C;&#x4F7F;&#x7528;&#x81EA;&#x5B9A;&#x4E49;&#x7684;<code>console.log</code>&#x65B9;&#x6CD5;&#xFF0C;&#x53EF;&#x4EE5;&#x5728;&#x663E;&#x793A;&#x7ED3;&#x679C;&#x6DFB;&#x52A0;&#x5F53;&#x524D;&#x65F6;&#x95F4;&#x3002;</p>
+<h3 id="consolewarn&#xFF0C;consoleerror">console.warn()&#xFF0C;console.error()</h3>
+<p><code>warn</code>&#x65B9;&#x6CD5;&#x548C;<code>error</code>&#x65B9;&#x6CD5;&#x4E5F;&#x662F;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#xFF0C;&#x5B83;&#x4EEC;&#x4E0E;<code>log</code>&#x65B9;&#x6CD5;&#x7684;&#x4E0D;&#x540C;&#x4E4B;&#x5904;&#x5728;&#x4E8E;&#xFF0C;<code>warn</code>&#x65B9;&#x6CD5;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x65F6;&#xFF0C;&#x5728;&#x6700;&#x524D;&#x9762;&#x52A0;&#x4E00;&#x4E2A;&#x9EC4;&#x8272;&#x4E09;&#x89D2;&#xFF0C;&#x8868;&#x793A;&#x8B66;&#x544A;&#xFF1B;<code>error</code>&#x65B9;&#x6CD5;&#x8F93;&#x51FA;&#x4FE1;&#x606F;&#x65F6;&#xFF0C;&#x5728;&#x6700;&#x524D;&#x9762;&#x52A0;&#x4E00;&#x4E2A;&#x7EA2;&#x8272;&#x7684;&#x53C9;&#xFF0C;&#x8868;&#x793A;&#x51FA;&#x9519;&#x3002;&#x540C;&#x65F6;&#xFF0C;&#x8FD8;&#x4F1A;&#x9AD8;&#x4EAE;&#x663E;&#x793A;&#x8F93;&#x51FA;&#x6587;&#x5B57;&#x548C;&#x9519;&#x8BEF;&#x53D1;&#x751F;&#x7684;&#x5806;&#x6808;&#x3002;&#x5176;&#x4ED6;&#x65B9;&#x9762;&#x90FD;&#x4E00;&#x6837;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Error: %s (%i)&apos;</span>, <span class="hljs-string">&apos;Server is not responding&apos;</span>, <span class="hljs-number">500</span>)
+<span class="hljs-comment">// Error: Server is not responding (500)</span>
+<span class="hljs-built_in">console</span>.warn(<span class="hljs-string">&apos;Warning! Too few nodes (%d)&apos;</span>, <span class="hljs-built_in">document</span>.childNodes.length)
+<span class="hljs-comment">// Warning! Too few nodes (1)</span>
+</code></pre>
+<p>&#x53EF;&#x4EE5;&#x8FD9;&#x6837;&#x7406;&#x89E3;&#xFF0C;<code>log</code>&#x65B9;&#x6CD5;&#x662F;&#x5199;&#x5165;&#x6807;&#x51C6;&#x8F93;&#x51FA;&#xFF08;<code>stdout</code>&#xFF09;&#xFF0C;<code>warn</code>&#x65B9;&#x6CD5;&#x548C;<code>error</code>&#x65B9;&#x6CD5;&#x662F;&#x5199;&#x5165;&#x6807;&#x51C6;&#x9519;&#x8BEF;&#xFF08;<code>stderr</code>&#xFF09;&#x3002;</p>
+<h3 id="consoletable">console.table()</h3>
+<p>&#x5BF9;&#x4E8E;&#x67D0;&#x4E9B;&#x590D;&#x5408;&#x7C7B;&#x578B;&#x7684;&#x6570;&#x636E;&#xFF0C;<code>console.table</code>&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x5C06;&#x5176;&#x8F6C;&#x4E3A;&#x8868;&#x683C;&#x663E;&#x793A;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> languages = [
+  { name: <span class="hljs-string">&quot;JavaScript&quot;</span>, fileExtension: <span class="hljs-string">&quot;.js&quot;</span> },
+  { name: <span class="hljs-string">&quot;TypeScript&quot;</span>, fileExtension: <span class="hljs-string">&quot;.ts&quot;</span> },
+  { name: <span class="hljs-string">&quot;CoffeeScript&quot;</span>, fileExtension: <span class="hljs-string">&quot;.coffee&quot;</span> }
+];
+
+<span class="hljs-built_in">console</span>.table(languages);
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x7684;<code>language</code>&#x53D8;&#x91CF;&#xFF0C;&#x8F6C;&#x4E3A;&#x8868;&#x683C;&#x663E;&#x793A;&#x5982;&#x4E0B;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>(index)</th>
+<th>name</th>
+<th>fileExtension</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>&quot;JavaScript&quot;</td>
+<td>&quot;.js&quot;</td>
+</tr>
+<tr>
+<td>1</td>
+<td>&quot;TypeScript&quot;</td>
+<td>&quot;.ts&quot;</td>
+</tr>
+<tr>
+<td>2</td>
+<td>&quot;CoffeeScript&quot;</td>
+<td>&quot;.coffee&quot;</td>
+</tr>
+</tbody>
+</table>
+<p>&#x4E0B;&#x9762;&#x662F;&#x663E;&#x793A;&#x8868;&#x683C;&#x5185;&#x5BB9;&#x7684;&#x4F8B;&#x5B50;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> languages = {
+  csharp: { name: <span class="hljs-string">&quot;C#&quot;</span>, paradigm: <span class="hljs-string">&quot;object-oriented&quot;</span> },
+  fsharp: { name: <span class="hljs-string">&quot;F#&quot;</span>, paradigm: <span class="hljs-string">&quot;functional&quot;</span> }
+};
+
+<span class="hljs-built_in">console</span>.table(languages);
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x7684;<code>language</code>&#xFF0C;&#x8F6C;&#x4E3A;&#x8868;&#x683C;&#x663E;&#x793A;&#x5982;&#x4E0B;&#x3002;</p>
+<table>
+<thead>
+<tr>
+<th>(index)</th>
+<th>name</th>
+<th>paradigm</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>csharp</td>
+<td>&quot;C#&quot;</td>
+<td>&quot;object-oriented&quot;</td>
+</tr>
+<tr>
+<td>fsharp</td>
+<td>&quot;F#&quot;</td>
+<td>&quot;functional&quot;</td>
+</tr>
+</tbody>
+</table>
+<h3 id="consolecount">console.count()</h3>
+<p><code>count</code>&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x8BA1;&#x6570;&#xFF0C;&#x8F93;&#x51FA;&#x5B83;&#x88AB;&#x8C03;&#x7528;&#x4E86;&#x591A;&#x5C11;&#x6B21;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params">user</span>) </span>{
+  <span class="hljs-built_in">console</span>.count();
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&apos;hi &apos;</span> + user;
+}
+
+greet(<span class="hljs-string">&apos;bob&apos;</span>)
+<span class="hljs-comment">//  : 1</span>
+<span class="hljs-comment">// &quot;hi bob&quot;</span>
+
+greet(<span class="hljs-string">&apos;alice&apos;</span>)
+<span class="hljs-comment">//  : 2</span>
+<span class="hljs-comment">// &quot;hi alice&quot;</span>
+
+greet(<span class="hljs-string">&apos;bob&apos;</span>)
+<span class="hljs-comment">//  : 3</span>
+<span class="hljs-comment">// &quot;hi bob&quot;</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x6BCF;&#x6B21;&#x8C03;&#x7528;<code>greet</code>&#x51FD;&#x6570;&#xFF0C;&#x5185;&#x90E8;&#x7684;<code>console.count</code>&#x65B9;&#x6CD5;&#x5C31;&#x8F93;&#x51FA;&#x6267;&#x884C;&#x6B21;&#x6570;&#x3002;</p>
+<p>&#x8BE5;&#x65B9;&#x6CD5;&#x53EF;&#x4EE5;&#x63A5;&#x53D7;&#x4E00;&#x4E2A;&#x5B57;&#x7B26;&#x4E32;&#x4F5C;&#x4E3A;&#x53C2;&#x6570;&#xFF0C;&#x4F5C;&#x4E3A;&#x6807;&#x7B7E;&#xFF0C;&#x5BF9;&#x6267;&#x884C;&#x6B21;&#x6570;&#x8FDB;&#x884C;&#x5206;&#x7C7B;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">greet</span>(<span class="hljs-params">user</span>) </span>{
+  <span class="hljs-built_in">console</span>.count(user);
+  <span class="hljs-keyword">return</span> <span class="hljs-string">&quot;hi &quot;</span> + user;
+}
+
+greet(<span class="hljs-string">&apos;bob&apos;</span>)
+<span class="hljs-comment">// bob: 1</span>
+<span class="hljs-comment">// &quot;hi bob&quot;</span>
+
+greet(<span class="hljs-string">&apos;alice&apos;</span>)
+<span class="hljs-comment">// alice: 1</span>
+<span class="hljs-comment">// &quot;hi alice&quot;</span>
+
+greet(<span class="hljs-string">&apos;bob&apos;</span>)
+<span class="hljs-comment">// bob: 2</span>
+<span class="hljs-comment">// &quot;hi bob&quot;</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x6839;&#x636E;&#x53C2;&#x6570;&#x7684;&#x4E0D;&#x540C;&#xFF0C;&#x663E;&#x793A;<code>bob</code>&#x6267;&#x884C;&#x4E86;&#x4E24;&#x6B21;&#xFF0C;<code>alice</code>&#x6267;&#x884C;&#x4E86;&#x4E00;&#x6B21;&#x3002;</p>
+<h3 id="consoledir&#xFF0C;consoledirxml">console.dir()&#xFF0C;console.dirxml()</h3>
+<p><code>dir</code>&#x65B9;&#x6CD5;&#x7528;&#x6765;&#x5BF9;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#x8FDB;&#x884C;&#x68C0;&#x67E5;&#xFF08;inspect&#xFF09;&#xFF0C;&#x5E76;&#x4EE5;&#x6613;&#x4E8E;&#x9605;&#x8BFB;&#x548C;&#x6253;&#x5370;&#x7684;&#x683C;&#x5F0F;&#x663E;&#x793A;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.log({f1: <span class="hljs-string">&apos;foo&apos;</span>, f2: <span class="hljs-string">&apos;bar&apos;</span>})
+<span class="hljs-comment">// Object {f1: &quot;foo&quot;, f2: &quot;bar&quot;}</span>
+
+<span class="hljs-built_in">console</span>.dir({f1: <span class="hljs-string">&apos;foo&apos;</span>, f2: <span class="hljs-string">&apos;bar&apos;</span>})
+<span class="hljs-comment">// Object</span>
+<span class="hljs-comment">//   f1: &quot;foo&quot;</span>
+<span class="hljs-comment">//   f2: &quot;bar&quot;</span>
+<span class="hljs-comment">//   __proto__: Object</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x663E;&#x793A;<code>dir</code>&#x65B9;&#x6CD5;&#x7684;&#x8F93;&#x51FA;&#x7ED3;&#x679C;&#xFF0C;&#x6BD4;<code>log</code>&#x65B9;&#x6CD5;&#x66F4;&#x6613;&#x8BFB;&#xFF0C;&#x4FE1;&#x606F;&#x4E5F;&#x66F4;&#x4E30;&#x5BCC;&#x3002;</p>
+<p>&#x8BE5;&#x65B9;&#x6CD5;&#x5BF9;&#x4E8E;&#x8F93;&#x51FA; DOM &#x5BF9;&#x8C61;&#x975E;&#x5E38;&#x6709;&#x7528;&#xFF0C;&#x56E0;&#x4E3A;&#x4F1A;&#x663E;&#x793A; DOM &#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.dir(<span class="hljs-built_in">document</span>.body)
+</code></pre>
+<p>Node &#x73AF;&#x5883;&#x4E4B;&#x4E2D;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x4EE5;&#x4EE3;&#x7801;&#x9AD8;&#x4EAE;&#x7684;&#x5F62;&#x5F0F;&#x8F93;&#x51FA;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.dir(obj, {colors: <span class="hljs-literal">true</span>})
+</code></pre>
+<p><code>dirxml</code>&#x65B9;&#x6CD5;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x4EE5;&#x76EE;&#x5F55;&#x6811;&#x7684;&#x5F62;&#x5F0F;&#xFF0C;&#x663E;&#x793A; DOM &#x8282;&#x70B9;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.dirxml(<span class="hljs-built_in">document</span>.body)
+</code></pre>
+<p>&#x5982;&#x679C;&#x53C2;&#x6570;&#x4E0D;&#x662F; DOM &#x8282;&#x70B9;&#xFF0C;&#x800C;&#x662F;&#x666E;&#x901A;&#x7684; JavaScript &#x5BF9;&#x8C61;&#xFF0C;<code>console.dirxml</code>&#x7B49;&#x540C;&#x4E8E;<code>console.dir</code>&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.dirxml([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+<span class="hljs-comment">// &#x7B49;&#x540C;&#x4E8E;</span>
+<span class="hljs-built_in">console</span>.dir([<span class="hljs-number">1</span>, <span class="hljs-number">2</span>, <span class="hljs-number">3</span>])
+</code></pre>
+<h3 id="consoleassert">console.assert()</h3>
+<p><code>console.assert</code>&#x65B9;&#x6CD5;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x8FC7;&#x7A0B;&#x4E2D;&#xFF0C;&#x8FDB;&#x884C;&#x6761;&#x4EF6;&#x5224;&#x65AD;&#xFF0C;&#x5982;&#x679C;&#x4E0D;&#x6EE1;&#x8DB3;&#x6761;&#x4EF6;&#xFF0C;&#x5C31;&#x663E;&#x793A;&#x4E00;&#x4E2A;&#x9519;&#x8BEF;&#xFF0C;&#x4F46;&#x4E0D;&#x4F1A;&#x4E2D;&#x65AD;&#x7A0B;&#x5E8F;&#x6267;&#x884C;&#x3002;&#x8FD9;&#x6837;&#x5C31;&#x76F8;&#x5F53;&#x4E8E;&#x63D0;&#x793A;&#x7528;&#x6237;&#xFF0C;&#x5185;&#x90E8;&#x72B6;&#x6001;&#x4E0D;&#x6B63;&#x786E;&#x3002;</p>
+<p>&#x5B83;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x8868;&#x8FBE;&#x5F0F;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#x662F;&#x5B57;&#x7B26;&#x4E32;&#x3002;&#x53EA;&#x6709;&#x5F53;&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#x4E3A;<code>false</code>&#xFF0C;&#x624D;&#x4F1A;&#x63D0;&#x793A;&#x6709;&#x9519;&#x8BEF;&#xFF0C;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x8F93;&#x51FA;&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x5426;&#x5219;&#x4E0D;&#x4F1A;&#x6709;&#x4EFB;&#x4F55;&#x7ED3;&#x679C;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.assert(<span class="hljs-literal">false</span>, <span class="hljs-string">&apos;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#x4E0D;&#x6210;&#x7ACB;&apos;</span>)
+<span class="hljs-comment">// Assertion failed: &#x5224;&#x65AD;&#x6761;&#x4EF6;&#x4E0D;&#x6210;&#x7ACB;</span>
+
+<span class="hljs-comment">// &#x76F8;&#x5F53;&#x4E8E;</span>
+<span class="hljs-keyword">try</span> {
+  <span class="hljs-keyword">if</span> (!<span class="hljs-literal">false</span>) {
+    <span class="hljs-keyword">throw</span> <span class="hljs-keyword">new</span> <span class="hljs-built_in">Error</span>(<span class="hljs-string">&apos;&#x5224;&#x65AD;&#x6761;&#x4EF6;&#x4E0D;&#x6210;&#x7ACB;&apos;</span>);
+  }
+} <span class="hljs-keyword">catch</span>(e) {
+  <span class="hljs-built_in">console</span>.error(e);
+}
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#xFF0C;&#x5224;&#x65AD;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x4E2A;&#x6570;&#x662F;&#x5426;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;500&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.assert(list.childNodes.length &lt; <span class="hljs-number">500</span>, <span class="hljs-string">&apos;&#x8282;&#x70B9;&#x4E2A;&#x6570;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;500&apos;</span>)
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x5982;&#x679C;&#x7B26;&#x5408;&#x6761;&#x4EF6;&#x7684;&#x8282;&#x70B9;&#x5C0F;&#x4E8E;500&#x4E2A;&#xFF0C;&#x4E0D;&#x4F1A;&#x6709;&#x4EFB;&#x4F55;&#x8F93;&#x51FA;&#xFF1B;&#x53EA;&#x6709;&#x5927;&#x4E8E;&#x7B49;&#x4E8E;500&#x65F6;&#xFF0C;&#x624D;&#x4F1A;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x63D0;&#x793A;&#x9519;&#x8BEF;&#xFF0C;&#x5E76;&#x4E14;&#x663E;&#x793A;&#x6307;&#x5B9A;&#x6587;&#x672C;&#x3002;</p>
+<h3 id="consoletime&#xFF0C;consoletimeend">console.time()&#xFF0C;console.timeEnd()</h3>
+<p>&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x8BA1;&#x65F6;&#xFF0C;&#x53EF;&#x4EE5;&#x7B97;&#x51FA;&#x4E00;&#x4E2A;&#x64CD;&#x4F5C;&#x6240;&#x82B1;&#x8D39;&#x7684;&#x51C6;&#x786E;&#x65F6;&#x95F4;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.time(<span class="hljs-string">&apos;Array initialize&apos;</span>);
+
+<span class="hljs-keyword">var</span> array= <span class="hljs-keyword">new</span> <span class="hljs-built_in">Array</span>(<span class="hljs-number">1000000</span>);
+<span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = array.length - <span class="hljs-number">1</span>; i &gt;= <span class="hljs-number">0</span>; i--) {
+  array[i] = <span class="hljs-keyword">new</span> <span class="hljs-built_in">Object</span>();
+};
+
+<span class="hljs-built_in">console</span>.timeEnd(<span class="hljs-string">&apos;Array initialize&apos;</span>);
+<span class="hljs-comment">// Array initialize: 1914.481ms</span>
+</code></pre>
+<p><code>time</code>&#x65B9;&#x6CD5;&#x8868;&#x793A;&#x8BA1;&#x65F6;&#x5F00;&#x59CB;&#xFF0C;<code>timeEnd</code>&#x65B9;&#x6CD5;&#x8868;&#x793A;&#x8BA1;&#x65F6;&#x7ED3;&#x675F;&#x3002;&#x5B83;&#x4EEC;&#x7684;&#x53C2;&#x6570;&#x662F;&#x8BA1;&#x65F6;&#x5668;&#x7684;&#x540D;&#x79F0;&#x3002;&#x8C03;&#x7528;<code>timeEnd</code>&#x65B9;&#x6CD5;&#x4E4B;&#x540E;&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#x4F1A;&#x663E;&#x793A;&#x201C;&#x8BA1;&#x65F6;&#x5668;&#x540D;&#x79F0;: &#x6240;&#x8017;&#x8D39;&#x7684;&#x65F6;&#x95F4;&#x201D;&#x3002;</p>
+<h3 id="consolegroup&#xFF0C;consolegroupend&#xFF0C;consolegroupcollapsed">console.group()&#xFF0C;console.groupEnd()&#xFF0C;console.groupCollapsed()</h3>
+<p><code>console.group</code>&#x548C;<code>console.groupEnd</code>&#x8FD9;&#x4E24;&#x4E2A;&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x5C06;&#x663E;&#x793A;&#x7684;&#x4FE1;&#x606F;&#x5206;&#x7EC4;&#x3002;&#x5B83;&#x53EA;&#x5728;&#x8F93;&#x51FA;&#x5927;&#x91CF;&#x4FE1;&#x606F;&#x65F6;&#x6709;&#x7528;&#xFF0C;&#x5206;&#x5728;&#x4E00;&#x7EC4;&#x7684;&#x4FE1;&#x606F;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x9F20;&#x6807;&#x6298;&#x53E0;/&#x5C55;&#x5F00;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.group(<span class="hljs-string">&apos;&#x4E00;&#x7EA7;&#x5206;&#x7EC4;&apos;</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x4E00;&#x7EA7;&#x5206;&#x7EC4;&#x7684;&#x5185;&#x5BB9;&apos;</span>);
+
+<span class="hljs-built_in">console</span>.group(<span class="hljs-string">&apos;&#x4E8C;&#x7EA7;&#x5206;&#x7EC4;&apos;</span>);
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;&#x4E8C;&#x7EA7;&#x5206;&#x7EC4;&#x7684;&#x5185;&#x5BB9;&apos;</span>);
+
+<span class="hljs-built_in">console</span>.groupEnd(); <span class="hljs-comment">// &#x4E8C;&#x7EA7;&#x5206;&#x7EC4;&#x7ED3;&#x675F;</span>
+<span class="hljs-built_in">console</span>.groupEnd(); <span class="hljs-comment">// &#x4E00;&#x7EA7;&#x5206;&#x7EC4;&#x7ED3;&#x675F;</span>
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4F1A;&#x5C06;&#x201C;&#x4E8C;&#x7EA7;&#x5206;&#x7EC4;&#x201D;&#x663E;&#x793A;&#x5728;&#x201C;&#x4E00;&#x7EA7;&#x5206;&#x7EC4;&#x201D;&#x5185;&#x90E8;&#xFF0C;&#x5E76;&#x4E14;&#x201C;&#x4E00;&#x7EA7;&#x5206;&#x7EC4;&#x201D;&#x548C;&#x201C;&#x4E8C;&#x7EA7;&#x5206;&#x7EC4;&#x201D;&#x524D;&#x9762;&#x90FD;&#x6709;&#x4E00;&#x4E2A;&#x6298;&#x53E0;&#x7B26;&#x53F7;&#xFF0C;&#x53EF;&#x4EE5;&#x7528;&#x6765;&#x6298;&#x53E0;&#x672C;&#x7EA7;&#x7684;&#x5185;&#x5BB9;&#x3002;</p>
+<p><code>console.groupCollapsed</code>&#x65B9;&#x6CD5;&#x4E0E;<code>console.group</code>&#x65B9;&#x6CD5;&#x5F88;&#x7C7B;&#x4F3C;&#xFF0C;&#x552F;&#x4E00;&#x7684;&#x533A;&#x522B;&#x662F;&#x8BE5;&#x7EC4;&#x7684;&#x5185;&#x5BB9;&#xFF0C;&#x5728;&#x7B2C;&#x4E00;&#x6B21;&#x663E;&#x793A;&#x65F6;&#x662F;&#x6536;&#x8D77;&#x7684;&#xFF08;collapsed&#xFF09;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x5C55;&#x5F00;&#x7684;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.groupCollapsed(<span class="hljs-string">&apos;Fetching Data&apos;</span>);
+
+<span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Request Sent&apos;</span>);
+<span class="hljs-built_in">console</span>.error(<span class="hljs-string">&apos;Error: Server not responding (500)&apos;</span>);
+
+<span class="hljs-built_in">console</span>.groupEnd();
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x53EA;&#x663E;&#x793A;&#x4E00;&#x884C;&#x201D;Fetching Data&#x201C;&#xFF0C;&#x70B9;&#x51FB;&#x540E;&#x624D;&#x4F1A;&#x5C55;&#x5F00;&#xFF0C;&#x663E;&#x793A;&#x5176;&#x4E2D;&#x5305;&#x542B;&#x7684;&#x4E24;&#x884C;&#x3002;</p>
+<h3 id="consoletrace&#xFF0C;consoleclear">console.trace()&#xFF0C;console.clear()</h3>
+<p><code>console.trace</code>&#x65B9;&#x6CD5;&#x663E;&#x793A;&#x5F53;&#x524D;&#x6267;&#x884C;&#x7684;&#x4EE3;&#x7801;&#x5728;&#x5806;&#x6808;&#x4E2D;&#x7684;&#x8C03;&#x7528;&#x8DEF;&#x5F84;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-built_in">console</span>.trace()
+<span class="hljs-comment">// console.trace()</span>
+<span class="hljs-comment">//   (anonymous function)</span>
+<span class="hljs-comment">//   InjectedScript._evaluateOn</span>
+<span class="hljs-comment">//   InjectedScript._evaluateAndWrap</span>
+<span class="hljs-comment">//   InjectedScript.evaluate</span>
+</code></pre>
+<p><code>console.clear</code>&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x6E05;&#x9664;&#x5F53;&#x524D;&#x63A7;&#x5236;&#x53F0;&#x7684;&#x6240;&#x6709;&#x8F93;&#x51FA;&#xFF0C;&#x5C06;&#x5149;&#x6807;&#x56DE;&#x7F6E;&#x5230;&#x7B2C;&#x4E00;&#x884C;&#x3002;&#x5982;&#x679C;&#x7528;&#x6237;&#x9009;&#x4E2D;&#x4E86;&#x63A7;&#x5236;&#x53F0;&#x7684;&#x201C;Preserve log&#x201D;&#x9009;&#x9879;&#xFF0C;<code>console.clear</code>&#x65B9;&#x6CD5;&#x5C06;&#x4E0D;&#x8D77;&#x4F5C;&#x7528;&#x3002;</p>
+<h2 id="&#x63A7;&#x5236;&#x53F0;&#x547D;&#x4EE4;&#x884C;-api">&#x63A7;&#x5236;&#x53F0;&#x547D;&#x4EE4;&#x884C; API</h2>
+<p>&#x6D4F;&#x89C8;&#x5668;&#x63A7;&#x5236;&#x53F0;&#x4E2D;&#xFF0C;&#x9664;&#x4E86;&#x4F7F;&#x7528;<code>console</code>&#x5BF9;&#x8C61;&#xFF0C;&#x8FD8;&#x53EF;&#x4EE5;&#x4F7F;&#x7528;&#x4E00;&#x4E9B;&#x63A7;&#x5236;&#x53F0;&#x81EA;&#x5E26;&#x7684;&#x547D;&#x4EE4;&#x884C;&#x65B9;&#x6CD5;&#x3002;</p>
+<p>&#xFF08;1&#xFF09;<code>$_</code></p>
+<p><code>$_</code>&#x5C5E;&#x6027;&#x8FD4;&#x56DE;&#x4E0A;&#x4E00;&#x4E2A;&#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x503C;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-number">2</span> + <span class="hljs-number">2</span>
+<span class="hljs-comment">// 4</span>
+$_
+<span class="hljs-comment">// 4</span>
+</code></pre>
+<p>&#xFF08;2&#xFF09;<code>$0</code> - <code>$4</code></p>
+<p>&#x63A7;&#x5236;&#x53F0;&#x4FDD;&#x5B58;&#x4E86;&#x6700;&#x8FD1;5&#x4E2A;&#x5728; Elements &#x9762;&#x677F;&#x9009;&#x4E2D;&#x7684; DOM &#x5143;&#x7D20;&#xFF0C;<code>$0</code>&#x4EE3;&#x8868;&#x5012;&#x6570;&#x7B2C;&#x4E00;&#x4E2A;&#xFF08;&#x6700;&#x8FD1;&#x4E00;&#x4E2A;&#xFF09;&#xFF0C;<code>$1</code>&#x4EE3;&#x8868;&#x5012;&#x6570;&#x7B2C;&#x4E8C;&#x4E2A;&#xFF0C;&#x4EE5;&#x6B64;&#x7C7B;&#x63A8;&#x76F4;&#x5230;<code>$4</code>&#x3002;</p>
+<p>&#xFF08;3&#xFF09;<code>$(selector)</code></p>
+<p><code>$(selector)</code>&#x8FD4;&#x56DE;&#x7B2C;&#x4E00;&#x4E2A;&#x5339;&#x914D;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x7B49;&#x540C;&#x4E8E;<code>document.querySelector()</code>&#x3002;&#x6CE8;&#x610F;&#xFF0C;&#x5982;&#x679C;&#x9875;&#x9762;&#x811A;&#x672C;&#x5BF9;<code>$</code>&#x6709;&#x5B9A;&#x4E49;&#xFF0C;&#x5219;&#x4F1A;&#x8986;&#x76D6;&#x539F;&#x59CB;&#x7684;&#x5B9A;&#x4E49;&#x3002;&#x6BD4;&#x5982;&#xFF0C;&#x9875;&#x9762;&#x91CC;&#x9762;&#x6709; jQuery&#xFF0C;&#x63A7;&#x5236;&#x53F0;&#x6267;&#x884C;<code>$(selector)</code>&#x5C31;&#x4F1A;&#x91C7;&#x7528; jQuery &#x7684;&#x5B9E;&#x73B0;&#xFF0C;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x3002;</p>
+<p>&#xFF08;4&#xFF09;<code>$$(selector)</code></p>
+<p><code>$$(selector)</code>&#x8FD4;&#x56DE;&#x9009;&#x4E2D;&#x7684; DOM &#x5BF9;&#x8C61;&#xFF0C;&#x7B49;&#x540C;&#x4E8E;<code>document.querySelectorAll</code>&#x3002;</p>
+<p>&#xFF08;5&#xFF09;<code>$x(path)</code></p>
+<p><code>$x(path)</code>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5305;&#x542B;&#x5339;&#x914D;&#x7279;&#x5B9A; XPath &#x8868;&#x8FBE;&#x5F0F;&#x7684;&#x6240;&#x6709; DOM &#x5143;&#x7D20;&#x3002;</p>
+<pre><code class="lang-javascript">$x(<span class="hljs-string">&quot;//p[a]&quot;</span>)
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x8FD4;&#x56DE;&#x6240;&#x6709;&#x5305;&#x542B;<code>a</code>&#x5143;&#x7D20;&#x7684;<code>p</code>&#x5143;&#x7D20;&#x3002;</p>
+<p>&#xFF08;6&#xFF09;<code>inspect(object)</code></p>
+<p><code>inspect(object)</code>&#x65B9;&#x6CD5;&#x6253;&#x5F00;&#x76F8;&#x5173;&#x9762;&#x677F;&#xFF0C;&#x5E76;&#x9009;&#x4E2D;&#x76F8;&#x5E94;&#x7684;&#x5143;&#x7D20;&#xFF0C;&#x663E;&#x793A;&#x5B83;&#x7684;&#x7EC6;&#x8282;&#x3002;DOM &#x5143;&#x7D20;&#x5728;<code>Elements</code>&#x9762;&#x677F;&#x4E2D;&#x663E;&#x793A;&#xFF0C;&#x6BD4;&#x5982;<code>inspect(document)</code>&#x4F1A;&#x5728; Elements &#x9762;&#x677F;&#x663E;&#x793A;<code>document</code>&#x5143;&#x7D20;&#x3002;JavaScript &#x5BF9;&#x8C61;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x9762;&#x677F;<code>Profiles</code>&#x9762;&#x677F;&#x4E2D;&#x663E;&#x793A;&#xFF0C;&#x6BD4;&#x5982;<code>inspect(window)</code>&#x3002;</p>
+<p>&#xFF08;7&#xFF09;<code>getEventListeners(object)</code></p>
+<p><code>getEventListeners(object)</code>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x5BF9;&#x8C61;&#xFF0C;&#x8BE5;&#x5BF9;&#x8C61;&#x7684;&#x6210;&#x5458;&#x4E3A;<code>object</code>&#x767B;&#x8BB0;&#x4E86;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x7684;&#x5404;&#x79CD;&#x4E8B;&#x4EF6;&#xFF08;&#x6BD4;&#x5982;<code>click</code>&#x6216;<code>keydown</code>&#xFF09;&#xFF0C;&#x6BCF;&#x4E2A;&#x4E8B;&#x4EF6;&#x5BF9;&#x5E94;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x6570;&#x7EC4;&#x7684;&#x6210;&#x5458;&#x4E3A;&#x8BE5;&#x4E8B;&#x4EF6;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</p>
+<p>&#xFF08;8&#xFF09;<code>keys(object)</code>&#xFF0C;<code>values(object)</code></p>
+<p><code>keys(object)</code>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5305;&#x542B;<code>object</code>&#x7684;&#x6240;&#x6709;&#x952E;&#x540D;&#x3002;</p>
+<p><code>values(object)</code>&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#xFF0C;&#x5305;&#x542B;<code>object</code>&#x7684;&#x6240;&#x6709;&#x952E;&#x503C;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> o = {<span class="hljs-string">&apos;p1&apos;</span>: <span class="hljs-string">&apos;a&apos;</span>, <span class="hljs-string">&apos;p2&apos;</span>: <span class="hljs-string">&apos;b&apos;</span>};
+
+keys(o)
+<span class="hljs-comment">// [&quot;p1&quot;, &quot;p2&quot;]</span>
+values(o)
+<span class="hljs-comment">// [&quot;a&quot;, &quot;b&quot;]</span>
+</code></pre>
+<p>&#xFF08;9&#xFF09;<code>monitorEvents(object[, events]) &#xFF0C;unmonitorEvents(object[, events])</code></p>
+<p><code>monitorEvents(object[, events])</code>&#x65B9;&#x6CD5;&#x76D1;&#x542C;&#x7279;&#x5B9A;&#x5BF9;&#x8C61;&#x4E0A;&#x53D1;&#x751F;&#x7684;&#x7279;&#x5B9A;&#x4E8B;&#x4EF6;&#x3002;&#x4E8B;&#x4EF6;&#x53D1;&#x751F;&#x65F6;&#xFF0C;&#x4F1A;&#x8FD4;&#x56DE;&#x4E00;&#x4E2A;<code>Event</code>&#x5BF9;&#x8C61;&#xFF0C;&#x5305;&#x542B;&#x8BE5;&#x4E8B;&#x4EF6;&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#x3002;<code>unmonitorEvents</code>&#x65B9;&#x6CD5;&#x7528;&#x4E8E;&#x505C;&#x6B62;&#x76D1;&#x542C;&#x3002;</p>
+<pre><code class="lang-javascript">monitorEvents(<span class="hljs-built_in">window</span>, <span class="hljs-string">&quot;resize&quot;</span>);
+monitorEvents(<span class="hljs-built_in">window</span>, [<span class="hljs-string">&quot;resize&quot;</span>, <span class="hljs-string">&quot;scroll&quot;</span>])
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x5206;&#x522B;&#x8868;&#x793A;&#x5355;&#x4E2A;&#x4E8B;&#x4EF6;&#x548C;&#x591A;&#x4E2A;&#x4E8B;&#x4EF6;&#x7684;&#x76D1;&#x542C;&#x65B9;&#x6CD5;&#x3002;</p>
+<pre><code class="lang-javascript">monitorEvents($<span class="hljs-number">0</span>, <span class="hljs-string">&apos;mouse&apos;</span>);
+unmonitorEvents($<span class="hljs-number">0</span>, <span class="hljs-string">&apos;mousemove&apos;</span>);
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x8868;&#x793A;&#x5982;&#x4F55;&#x505C;&#x6B62;&#x76D1;&#x542C;&#x3002;</p>
+<p><code>monitorEvents</code>&#x5141;&#x8BB8;&#x76D1;&#x542C;&#x540C;&#x4E00;&#x5927;&#x7C7B;&#x7684;&#x4E8B;&#x4EF6;&#x3002;&#x6240;&#x6709;&#x4E8B;&#x4EF6;&#x53EF;&#x4EE5;&#x5206;&#x6210;&#x56DB;&#x4E2A;&#x5927;&#x7C7B;&#x3002;</p>
+<ul>
+<li>mouse&#xFF1A;&quot;mousedown&quot;, &quot;mouseup&quot;, &quot;click&quot;, &quot;dblclick&quot;, &quot;mousemove&quot;, &quot;mouseover&quot;, &quot;mouseout&quot;, &quot;mousewheel&quot;</li>
+<li>key&#xFF1A;&quot;keydown&quot;, &quot;keyup&quot;, &quot;keypress&quot;, &quot;textInput&quot;</li>
+<li>touch&#xFF1A;&quot;touchstart&quot;, &quot;touchmove&quot;, &quot;touchend&quot;, &quot;touchcancel&quot;</li>
+<li>control&#xFF1A;&quot;resize&quot;, &quot;scroll&quot;, &quot;zoom&quot;, &quot;focus&quot;, &quot;blur&quot;, &quot;select&quot;, &quot;change&quot;, &quot;submit&quot;, &quot;reset&quot;</li>
+</ul>
+<pre><code class="lang-javascript">monitorEvents($(<span class="hljs-string">&quot;#msg&quot;</span>), <span class="hljs-string">&quot;key&quot;</span>);
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x8868;&#x793A;&#x76D1;&#x542C;&#x6240;&#x6709;<code>key</code>&#x5927;&#x7C7B;&#x7684;&#x4E8B;&#x4EF6;&#x3002;</p>
+<p>&#xFF08;10&#xFF09;&#x5176;&#x4ED6;&#x65B9;&#x6CD5;</p>
+<p>&#x547D;&#x4EE4;&#x884C; API &#x8FD8;&#x63D0;&#x4F9B;&#x4EE5;&#x4E0B;&#x65B9;&#x6CD5;&#x3002;</p>
+<ul>
+<li><code>clear()</code>&#xFF1A;&#x6E05;&#x9664;&#x63A7;&#x5236;&#x53F0;&#x7684;&#x5386;&#x53F2;&#x3002;</li>
+<li><code>copy(object)</code>&#xFF1A;&#x590D;&#x5236;&#x7279;&#x5B9A; DOM &#x5143;&#x7D20;&#x5230;&#x526A;&#x8D34;&#x677F;&#x3002;</li>
+<li><code>dir(object)</code>&#xFF1A;&#x663E;&#x793A;&#x7279;&#x5B9A;&#x5BF9;&#x8C61;&#x7684;&#x6240;&#x6709;&#x5C5E;&#x6027;&#xFF0C;&#x662F;<code>console.dir</code>&#x65B9;&#x6CD5;&#x7684;&#x522B;&#x540D;&#x3002;</li>
+<li><code>dirxml(object)</code>&#xFF1A;&#x663E;&#x793A;&#x7279;&#x5B9A;&#x5BF9;&#x8C61;&#x7684; XML &#x5F62;&#x5F0F;&#xFF0C;&#x662F;<code>console.dirxml</code>&#x65B9;&#x6CD5;&#x7684;&#x522B;&#x540D;&#x3002;</li>
+</ul>
+<h2 id="debugger-&#x8BED;&#x53E5;">debugger &#x8BED;&#x53E5;</h2>
+<p><code>debugger</code>&#x8BED;&#x53E5;&#x4E3B;&#x8981;&#x7528;&#x4E8E;&#x9664;&#x9519;&#xFF0C;&#x4F5C;&#x7528;&#x662F;&#x8BBE;&#x7F6E;&#x65AD;&#x70B9;&#x3002;&#x5982;&#x679C;&#x6709;&#x6B63;&#x5728;&#x8FD0;&#x884C;&#x7684;&#x9664;&#x9519;&#x5DE5;&#x5177;&#xFF0C;&#x7A0B;&#x5E8F;&#x8FD0;&#x884C;&#x5230;<code>debugger</code>&#x8BED;&#x53E5;&#x65F6;&#x4F1A;&#x81EA;&#x52A8;&#x505C;&#x4E0B;&#x3002;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x9664;&#x9519;&#x5DE5;&#x5177;&#xFF0C;<code>debugger</code>&#x8BED;&#x53E5;&#x4E0D;&#x4F1A;&#x4EA7;&#x751F;&#x4EFB;&#x4F55;&#x7ED3;&#x679C;&#xFF0C;JavaScript &#x5F15;&#x64CE;&#x81EA;&#x52A8;&#x8DF3;&#x8FC7;&#x8FD9;&#x4E00;&#x53E5;&#x3002;</p>
+<p>Chrome &#x6D4F;&#x89C8;&#x5668;&#x4E2D;&#xFF0C;&#x5F53;&#x4EE3;&#x7801;&#x8FD0;&#x884C;&#x5230;<code>debugger</code>&#x8BED;&#x53E5;&#x65F6;&#xFF0C;&#x5C31;&#x4F1A;&#x6682;&#x505C;&#x8FD0;&#x884C;&#xFF0C;&#x81EA;&#x52A8;&#x6253;&#x5F00;&#x811A;&#x672C;&#x6E90;&#x7801;&#x754C;&#x9762;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; <span class="hljs-number">5</span>; i++){
+  <span class="hljs-built_in">console</span>.log(i);
+  <span class="hljs-keyword">if</span> (i === <span class="hljs-number">2</span>) <span class="hljs-keyword">debugger</span>;
+}
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x6253;&#x5370;&#x51FA;0&#xFF0C;1&#xFF0C;2&#x4EE5;&#x540E;&#xFF0C;&#x5C31;&#x4F1A;&#x6682;&#x505C;&#xFF0C;&#x81EA;&#x52A8;&#x6253;&#x5F00;&#x6E90;&#x7801;&#x754C;&#x9762;&#xFF0C;&#x7B49;&#x5F85;&#x8FDB;&#x4E00;&#x6B65;&#x5904;&#x7406;&#x3002;</p>
+<h2 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;">&#x53C2;&#x8003;&#x94FE;&#x63A5;</h2>
+<ul>
+<li>Chrome Developer Tools, <a href="https://developers.google.com/chrome-developer-tools/docs/console" target="_blank">Using the Console</a></li>
+<li>Matt West, <a href="http://blog.teamtreehouse.com/mastering-developer-tools-console" target="_blank">Mastering The Developer Tools Console</a></li>
+<li>Firebug Wiki, <a href="https://getfirebug.com/wiki/index.php/Console_API" target="_blank">Console API</a></li>
+<li>Axel Rauschmayer, <a href="http://www.2ality.com/2013/10/console-api.html" target="_blank">The JavaScript console API</a></li>
+<li>Marius Schulz, <a href="http://blog.mariusschulz.com/2013/11/13/advanced-javascript-debugging-with-consoletable" target="_blank">Advanced JavaScript Debugging with console.table()</a></li>
+<li>Google Developer, <a href="https://developers.google.com/chrome-developer-tools/docs/commandline-api" target="_blank">Command Line API Reference</a></li>
+</ul>
+<footer class="page-footer"><span class="copyright">&#xA9; Tony all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-5-15 11:35:02
+</span></footer></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="style.html" class="navigation navigation-prev " aria-label="Previous page: 编程风格">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../stdlib/object.html" class="navigation navigation-next " aria-label="Next page: 标准库">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"console 对象与控制台","level":"1.5.3","depth":2,"next":{"title":"标准库","level":"1.6","depth":1,"path":"docs/stdlib/object.md","ref":"docs/stdlib/object.md","articles":[{"title":"属性描述对象","level":"1.6.1","depth":2,"path":"docs/stdlib/attributes.md","ref":"docs/stdlib/attributes.md","articles":[]},{"title":"Array 对象","level":"1.6.2","depth":2,"path":"docs/stdlib/array.md","ref":"docs/stdlib/array.md","articles":[]},{"title":"包装对象","level":"1.6.3","depth":2,"path":"docs/stdlib/wrapper.md","ref":"docs/stdlib/wrapper.md","articles":[]},{"title":"Boolean 对象","level":"1.6.4","depth":2,"path":"docs/stdlib/boolean.md","ref":"docs/stdlib/boolean.md","articles":[]},{"title":"Number 对象","level":"1.6.5","depth":2,"path":"docs/stdlib/number.md","ref":"docs/stdlib/number.md","articles":[]},{"title":"String 对象","level":"1.6.6","depth":2,"path":"docs/stdlib/string.md","ref":"docs/stdlib/string.md","articles":[]},{"title":"Math 对象","level":"1.6.7","depth":2,"path":"docs/stdlib/math.md","ref":"docs/stdlib/math.md","articles":[]},{"title":"Date 对象","level":"1.6.8","depth":2,"path":"docs/stdlib/date.md","ref":"docs/stdlib/date.md","articles":[]},{"title":"RegExp 对象","level":"1.6.9","depth":2,"path":"docs/stdlib/regexp.md","ref":"docs/stdlib/regexp.md","articles":[]},{"title":"JSON 对象","level":"1.6.10","depth":2,"path":"docs/stdlib/json.md","ref":"docs/stdlib/json.md","articles":[]}]},"previous":{"title":"编程风格","level":"1.5.2","depth":2,"path":"docs/features/style.md","ref":"docs/features/style.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","chapter-fold","code","favicon","tbfed-pagefooter","-sharing","sharing-plus","github","github-buttons","lightbox"],"styles":{"website":"/source/css/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Tony","modify_label":"该文件修订时间：","modify_format":"2019-5-15 11:35:02"},"chapter-fold":{},"github":{"url":"https://github.com/Tony-Code"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/source/images/favicon.ico","bookmark":"/source/images/favicon.ico","appleTouch":"/source/images/favicon.ico","appleTouchMore":{"120x120":"/source/images/favicon.ico","180x180":"/source/images/favicon.ico"}},"lightbox":{"jquery":true},"github-buttons":{"buttons":[{"user":"Tony-Code","repo":"javascript","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["weibo","qq","qzone","douban"],"douban":false,"facebook":true,"weibo":false,"twitter":true,"pocket":false,"google":true,"qzone":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"tony","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"JavaScript中文文档","language":"zh-hans","gitbook":"3.2.3","description":"JavaScript文档"},"file":{"path":"docs/features/console.md","mtime":"2019-01-09T00:43:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T06:37:39.706Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/jquery.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+

@@ -1,0 +1,1634 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-hans" >
+    <head>
+        <meta charset="UTF-8">
+        <meta content="text/html; charset=utf-8" http-equiv="Content-Type">
+        <title>Mutation Observer API · JavaScript中文文档</title>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="">
+        <meta name="generator" content="GitBook 3.2.3">
+        <meta name="author" content="tony">
+        
+        
+    
+    <link rel="stylesheet" href="../../gitbook/style.css">
+
+    
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-splitter/splitter.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-code/plugin.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-tbfed-pagefooter/footer.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-lightbox/lightbox.min.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-highlight/website.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-search/search.css">
+                
+            
+                
+                <link rel="stylesheet" href="../../gitbook/gitbook-plugin-fontsettings/website.css">
+                
+            
+        
+
+    
+
+    
+        
+        <link rel="stylesheet" href="../../source/css/website.css">
+        
+    
+
+        
+    
+    
+    
+    
+    <meta name="HandheldFriendly" content="true"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <link rel="apple-touch-icon-precomposed" sizes="152x152" href="../../gitbook/images/apple-touch-icon-precomposed-152.png">
+    <link rel="shortcut icon" href="../../gitbook/images/favicon.ico" type="image/x-icon">
+
+    
+    <link rel="next" href="../events/eventtarget.html" />
+    
+    
+    <link rel="prev" href="css.html" />
+    
+
+    <style>
+    @media only screen and (max-width: 640px) {
+        .book-header .hidden-mobile {
+            display: none;
+        }
+    }
+    </style>
+    <script>
+        window["gitbook-plugin-github-buttons"] = {"buttons":[{"user":"Tony-Code","repo":"javascript","type":"star","size":"small","count":true}]};
+    </script>
+
+    
+        <link rel="shortcut icon" href='../../source/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="bookmark" href='../../source/images/favicon.ico' type="image/x-icon">
+    
+    
+        <link rel="apple-touch-icon" href='../../source/images/favicon.ico'>
+    
+    
+        
+        <link rel="apple-touch-icon" sizes="120x120" href="../../source/images/favicon.ico">
+        
+        <link rel="apple-touch-icon" sizes="180x180" href="../../source/images/favicon.ico">
+        
+    
+
+    </head>
+    <body>
+        
+<div class="book">
+    <div class="book-summary">
+        
+            
+<div id="book-search-input" role="search">
+    <input type="text" placeholder="输入并搜索" />
+</div>
+
+            
+                <nav role="navigation">
+                
+
+
+<ul class="summary">
+    
+    
+
+    
+
+    
+        
+        
+    
+        <li class="chapter " data-level="1.1" data-path="../../">
+            
+                <a href="../../">
+            
+                    
+                    前言
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2" data-path="../basic/introduction.html">
+            
+                <a href="../basic/introduction.html">
+            
+                    
+                    入门篇
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.2.1" data-path="../basic/history.html">
+            
+                <a href="../basic/history.html">
+            
+                    
+                    历史
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.2.2" data-path="../basic/grammar.html">
+            
+                <a href="../basic/grammar.html">
+            
+                    
+                    基本语法
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3" data-path="../types/general.html">
+            
+                <a href="../types/general.html">
+            
+                    
+                    数据类型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.3.1" data-path="../types/null-undefined-boolean.html">
+            
+                <a href="../types/null-undefined-boolean.html">
+            
+                    
+                    null，undefined 和布尔值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.2" data-path="../types/number.html">
+            
+                <a href="../types/number.html">
+            
+                    
+                    数值
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.3" data-path="../types/string.html">
+            
+                <a href="../types/string.html">
+            
+                    
+                    字符串
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.4" data-path="../types/object.html">
+            
+                <a href="../types/object.html">
+            
+                    
+                    对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.5" data-path="../types/function.html">
+            
+                <a href="../types/function.html">
+            
+                    
+                    函数
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.3.6" data-path="../types/array.html">
+            
+                <a href="../types/array.html">
+            
+                    
+                    数组
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4" data-path="../operators/arithmetic.html">
+            
+                <a href="../operators/arithmetic.html">
+            
+                    
+                    运算符
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.4.1" data-path="../operators/comparison.html">
+            
+                <a href="../operators/comparison.html">
+            
+                    
+                    比较运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.2" data-path="../operators/boolean.html">
+            
+                <a href="../operators/boolean.html">
+            
+                    
+                    布尔运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.3" data-path="../operators/bit.html">
+            
+                <a href="../operators/bit.html">
+            
+                    
+                    二进制位运算符
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.4.4" data-path="../operators/priority.html">
+            
+                <a href="../operators/priority.html">
+            
+                    
+                    其他运算符，运算顺序
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5" data-path="../features/conversion.html">
+            
+                <a href="../features/conversion.html">
+            
+                    
+                    语法专题
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.5.1" data-path="../features/error.html">
+            
+                <a href="../features/error.html">
+            
+                    
+                    错误处理机制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.2" data-path="../features/style.html">
+            
+                <a href="../features/style.html">
+            
+                    
+                    编程风格
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.5.3" data-path="../features/console.html">
+            
+                <a href="../features/console.html">
+            
+                    
+                    console 对象与控制台
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6" data-path="../stdlib/object.html">
+            
+                <a href="../stdlib/object.html">
+            
+                    
+                    标准库
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.6.1" data-path="../stdlib/attributes.html">
+            
+                <a href="../stdlib/attributes.html">
+            
+                    
+                    属性描述对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.2" data-path="../stdlib/array.html">
+            
+                <a href="../stdlib/array.html">
+            
+                    
+                    Array 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.3" data-path="../stdlib/wrapper.html">
+            
+                <a href="../stdlib/wrapper.html">
+            
+                    
+                    包装对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.4" data-path="../stdlib/boolean.html">
+            
+                <a href="../stdlib/boolean.html">
+            
+                    
+                    Boolean 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.5" data-path="../stdlib/number.html">
+            
+                <a href="../stdlib/number.html">
+            
+                    
+                    Number 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.6" data-path="../stdlib/string.html">
+            
+                <a href="../stdlib/string.html">
+            
+                    
+                    String 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.7" data-path="../stdlib/math.html">
+            
+                <a href="../stdlib/math.html">
+            
+                    
+                    Math 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.8" data-path="../stdlib/date.html">
+            
+                <a href="../stdlib/date.html">
+            
+                    
+                    Date 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.9" data-path="../stdlib/regexp.html">
+            
+                <a href="../stdlib/regexp.html">
+            
+                    
+                    RegExp 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.6.10" data-path="../stdlib/json.html">
+            
+                <a href="../stdlib/json.html">
+            
+                    
+                    JSON 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7" data-path="../oop/new.html">
+            
+                <a href="../oop/new.html">
+            
+                    
+                    面向对象编程
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.7.1" data-path="../oop/this.html">
+            
+                <a href="../oop/this.html">
+            
+                    
+                    this 关键字
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.2" data-path="../oop/prototype.html">
+            
+                <a href="../oop/prototype.html">
+            
+                    
+                    对象的继承
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.3" data-path="../oop/object.html">
+            
+                <a href="../oop/object.html">
+            
+                    
+                    Object 对象的相关方法
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.7.4" data-path="../oop/strict.html">
+            
+                <a href="../oop/strict.html">
+            
+                    
+                    严格模式
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8" data-path="../async/general.html">
+            
+                <a href="../async/general.html">
+            
+                    
+                    异步操作
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.8.1" data-path="../async/timer.html">
+            
+                <a href="../async/timer.html">
+            
+                    
+                    定时器
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.8.2" data-path="../async/promise.html">
+            
+                <a href="../async/promise.html">
+            
+                    
+                    Promise 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9" data-path="general.html">
+            
+                <a href="general.html">
+            
+                    
+                    DOM
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.9.1" data-path="node.html">
+            
+                <a href="node.html">
+            
+                    
+                    Node 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.2" data-path="nodelist.html">
+            
+                <a href="nodelist.html">
+            
+                    
+                    NodeList 接口，HTMLCollection 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.3" data-path="parentnode.html">
+            
+                <a href="parentnode.html">
+            
+                    
+                    ParentNode 接口，ChildNode 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.4" data-path="document.html">
+            
+                <a href="document.html">
+            
+                    
+                    Document 节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.5" data-path="element.html">
+            
+                <a href="element.html">
+            
+                    
+                    Element 节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.6" data-path="attributes.html">
+            
+                <a href="attributes.html">
+            
+                    
+                    属性的操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.7" data-path="text.html">
+            
+                <a href="text.html">
+            
+                    
+                    Text 节点和 DocumentFragment 节点
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.9.8" data-path="css.html">
+            
+                <a href="css.html">
+            
+                    
+                    CSS 操作
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter active" data-level="1.9.9" data-path="mutationobserver.html">
+            
+                <a href="mutationobserver.html">
+            
+                    
+                    Mutation Observer API
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10" data-path="../events/eventtarget.html">
+            
+                <a href="../events/eventtarget.html">
+            
+                    
+                    事件
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.10.1" data-path="../events/model.html">
+            
+                <a href="../events/model.html">
+            
+                    
+                    事件模型
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.2" data-path="../events/event.html">
+            
+                <a href="../events/event.html">
+            
+                    
+                    Event 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.3" data-path="../events/mouse.html">
+            
+                <a href="../events/mouse.html">
+            
+                    
+                    鼠标事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.4" data-path="../events/keyboard.html">
+            
+                <a href="../events/keyboard.html">
+            
+                    
+                    键盘事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.5" data-path="../events/progress.html">
+            
+                <a href="../events/progress.html">
+            
+                    
+                    进度事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.6" data-path="../events/form.html">
+            
+                <a href="../events/form.html">
+            
+                    
+                    表单事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.7" data-path="../events/touch.html">
+            
+                <a href="../events/touch.html">
+            
+                    
+                    触摸事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.8" data-path="../events/drag.html">
+            
+                <a href="../events/drag.html">
+            
+                    
+                    拖拉事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.9" data-path="../events/common.html">
+            
+                <a href="../events/common.html">
+            
+                    
+                    其他常见事件
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.10.10" data-path="../events/globaleventhandlers.html">
+            
+                <a href="../events/globaleventhandlers.html">
+            
+                    
+                    GlobalEventHandlers 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11" data-path="../bom/engine.html">
+            
+                <a href="../bom/engine.html">
+            
+                    
+                    浏览器模型
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.11.1" data-path="../bom/window.html">
+            
+                <a href="../bom/window.html">
+            
+                    
+                    window 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.2" data-path="../bom/navigator.html">
+            
+                <a href="../bom/navigator.html">
+            
+                    
+                    Navigator 对象，Screen 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.3" data-path="../bom/cookie.html">
+            
+                <a href="../bom/cookie.html">
+            
+                    
+                    Cookie
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.4" data-path="../bom/xmlhttprequest.html">
+            
+                <a href="../bom/xmlhttprequest.html">
+            
+                    
+                    XMLHttpRequest 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.5" data-path="../bom/same-origin.html">
+            
+                <a href="../bom/same-origin.html">
+            
+                    
+                    同源限制
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.6" data-path="../bom/cors.html">
+            
+                <a href="../bom/cors.html">
+            
+                    
+                    CORS 通信
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.7" data-path="../bom/storage.html">
+            
+                <a href="../bom/storage.html">
+            
+                    
+                    Storage 接口
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.8" data-path="../bom/history.html">
+            
+                <a href="../bom/history.html">
+            
+                    
+                    History 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.9" data-path="../bom/location.html">
+            
+                <a href="../bom/location.html">
+            
+                    
+                    Location 对象，URL 对象，URLSearchParams 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.10" data-path="../bom/arraybuffer.html">
+            
+                <a href="../bom/arraybuffer.html">
+            
+                    
+                    ArrayBuffer 对象，Blob 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.11" data-path="../bom/file.html">
+            
+                <a href="../bom/file.html">
+            
+                    
+                    File 对象，FileList 对象，FileReader 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.12" data-path="../bom/form.html">
+            
+                <a href="../bom/form.html">
+            
+                    
+                    表单，FormData 对象
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.13" data-path="../bom/indexeddb.html">
+            
+                <a href="../bom/indexeddb.html">
+            
+                    
+                    IndexedDB API
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.11.14" data-path="../bom/webworker.html">
+            
+                <a href="../bom/webworker.html">
+            
+                    
+                    Web Worker
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12" data-path="../elements/a.html">
+            
+                <a href="../elements/a.html">
+            
+                    
+                    网页元素接口
+            
+                </a>
+            
+
+            
+            <ul class="articles">
+                
+    
+        <li class="chapter " data-level="1.12.1" data-path="../elements/img.html">
+            
+                <a href="../elements/img.html">
+            
+                    
+                    img
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.2" data-path="../elements/form.html">
+            
+                <a href="../elements/form.html">
+            
+                    
+                    form
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.3" data-path="../elements/input.html">
+            
+                <a href="../elements/input.html">
+            
+                    
+                    input
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.4" data-path="../elements/button.html">
+            
+                <a href="../elements/button.html">
+            
+                    
+                    button
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.5" data-path="../elements/option.html">
+            
+                <a href="../elements/option.html">
+            
+                    
+                    option
+            
+                </a>
+            
+
+            
+        </li>
+    
+        <li class="chapter " data-level="1.12.6" data-path="../elements/video.html">
+            
+                <a href="../elements/video.html">
+            
+                    
+                    video,audio
+            
+                </a>
+            
+
+            
+        </li>
+    
+
+            </ul>
+            
+        </li>
+    
+
+    
+
+    <li class="divider"></li>
+
+    <li>
+        <a href="https://www.gitbook.com" target="blank" class="gitbook-link">
+            本书使用 GitBook 发布
+        </a>
+    </li>
+</ul>
+
+
+                </nav>
+            
+        
+    </div>
+
+    <div class="book-body">
+        
+            <div class="body-inner">
+                
+                    
+
+<div class="book-header" role="navigation">
+    
+
+    <!-- Title -->
+    <h1>
+        <i class="fa fa-circle-o-notch fa-spin"></i>
+        <a href="../.." >Mutation Observer API</a>
+    </h1>
+</div>
+
+
+
+
+                    <div class="page-wrapper" tabindex="-1" role="main">
+                        <div class="page-inner">
+                            
+<div id="book-search-results">
+    <div class="search-noresults">
+    
+                                <section class="normal markdown-section">
+                                
+                                <html><head></head><body><h1 id="mutation-observer-api">Mutation Observer API</h1>
+<h2 id="&#x6982;&#x8FF0;">&#x6982;&#x8FF0;</h2>
+<p>Mutation Observer API &#x7528;&#x6765;&#x76D1;&#x89C6; DOM &#x53D8;&#x52A8;&#x3002;DOM &#x7684;&#x4EFB;&#x4F55;&#x53D8;&#x52A8;&#xFF0C;&#x6BD4;&#x5982;&#x8282;&#x70B9;&#x7684;&#x589E;&#x51CF;&#x3001;&#x5C5E;&#x6027;&#x7684;&#x53D8;&#x52A8;&#x3001;&#x6587;&#x672C;&#x5185;&#x5BB9;&#x7684;&#x53D8;&#x52A8;&#xFF0C;&#x8FD9;&#x4E2A; API &#x90FD;&#x53EF;&#x4EE5;&#x5F97;&#x5230;&#x901A;&#x77E5;&#x3002;</p>
+<p>&#x6982;&#x5FF5;&#x4E0A;&#xFF0C;&#x5B83;&#x5F88;&#x63A5;&#x8FD1;&#x4E8B;&#x4EF6;&#xFF0C;&#x53EF;&#x4EE5;&#x7406;&#x89E3;&#x4E3A; DOM &#x53D1;&#x751F;&#x53D8;&#x52A8;&#x5C31;&#x4F1A;&#x89E6;&#x53D1; Mutation Observer &#x4E8B;&#x4EF6;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5B83;&#x4E0E;&#x4E8B;&#x4EF6;&#x6709;&#x4E00;&#x4E2A;&#x672C;&#x8D28;&#x4E0D;&#x540C;&#xFF1A;&#x4E8B;&#x4EF6;&#x662F;&#x540C;&#x6B65;&#x89E6;&#x53D1;&#xFF0C;&#x4E5F;&#x5C31;&#x662F;&#x8BF4;&#xFF0C;DOM &#x7684;&#x53D8;&#x52A8;&#x7ACB;&#x523B;&#x4F1A;&#x89E6;&#x53D1;&#x76F8;&#x5E94;&#x7684;&#x4E8B;&#x4EF6;&#xFF1B;Mutation Observer &#x5219;&#x662F;&#x5F02;&#x6B65;&#x89E6;&#x53D1;&#xFF0C;DOM &#x7684;&#x53D8;&#x52A8;&#x5E76;&#x4E0D;&#x4F1A;&#x9A6C;&#x4E0A;&#x89E6;&#x53D1;&#xFF0C;&#x800C;&#x662F;&#x8981;&#x7B49;&#x5230;&#x5F53;&#x524D;&#x6240;&#x6709; DOM &#x64CD;&#x4F5C;&#x90FD;&#x7ED3;&#x675F;&#x624D;&#x89E6;&#x53D1;&#x3002;</p>
+<p>&#x8FD9;&#x6837;&#x8BBE;&#x8BA1;&#x662F;&#x4E3A;&#x4E86;&#x5E94;&#x4ED8; DOM &#x53D8;&#x52A8;&#x9891;&#x7E41;&#x7684;&#x7279;&#x70B9;&#x3002;&#x4E3E;&#x4F8B;&#x6765;&#x8BF4;&#xFF0C;&#x5982;&#x679C;&#x6587;&#x6863;&#x4E2D;&#x8FDE;&#x7EED;&#x63D2;&#x5165;1000&#x4E2A;<code>&lt;p&gt;</code>&#x5143;&#x7D20;&#xFF0C;&#x5C31;&#x4F1A;&#x8FDE;&#x7EED;&#x89E6;&#x53D1;1000&#x4E2A;&#x63D2;&#x5165;&#x4E8B;&#x4EF6;&#xFF0C;&#x6267;&#x884C;&#x6BCF;&#x4E2A;&#x4E8B;&#x4EF6;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x8FD9;&#x5F88;&#x53EF;&#x80FD;&#x9020;&#x6210;&#x6D4F;&#x89C8;&#x5668;&#x7684;&#x5361;&#x987F;&#xFF1B;&#x800C; Mutation Observer &#x5B8C;&#x5168;&#x4E0D;&#x540C;&#xFF0C;&#x53EA;&#x5728;1000&#x4E2A;&#x6BB5;&#x843D;&#x90FD;&#x63D2;&#x5165;&#x7ED3;&#x675F;&#x540E;&#x624D;&#x4F1A;&#x89E6;&#x53D1;&#xFF0C;&#x800C;&#x4E14;&#x53EA;&#x89E6;&#x53D1;&#x4E00;&#x6B21;&#x3002;</p>
+<p>Mutation Observer &#x6709;&#x4EE5;&#x4E0B;&#x7279;&#x70B9;&#x3002;</p>
+<ul>
+<li>&#x5B83;&#x7B49;&#x5F85;&#x6240;&#x6709;&#x811A;&#x672C;&#x4EFB;&#x52A1;&#x5B8C;&#x6210;&#x540E;&#xFF0C;&#x624D;&#x4F1A;&#x8FD0;&#x884C;&#xFF08;&#x5373;&#x5F02;&#x6B65;&#x89E6;&#x53D1;&#x65B9;&#x5F0F;&#xFF09;&#x3002;</li>
+<li>&#x5B83;&#x628A; DOM &#x53D8;&#x52A8;&#x8BB0;&#x5F55;&#x5C01;&#x88C5;&#x6210;&#x4E00;&#x4E2A;&#x6570;&#x7EC4;&#x8FDB;&#x884C;&#x5904;&#x7406;&#xFF0C;&#x800C;&#x4E0D;&#x662F;&#x4E00;&#x6761;&#x6761;&#x4E2A;&#x522B;&#x5904;&#x7406; DOM &#x53D8;&#x52A8;&#x3002;</li>
+<li>&#x5B83;&#x65E2;&#x53EF;&#x4EE5;&#x89C2;&#x5BDF; DOM &#x7684;&#x6240;&#x6709;&#x7C7B;&#x578B;&#x53D8;&#x52A8;&#xFF0C;&#x4E5F;&#x53EF;&#x4EE5;&#x6307;&#x5B9A;&#x53EA;&#x89C2;&#x5BDF;&#x67D0;&#x4E00;&#x7C7B;&#x53D8;&#x52A8;&#x3002;</li>
+</ul>
+<h2 id="mutationobserver-&#x6784;&#x9020;&#x51FD;&#x6570;">MutationObserver &#x6784;&#x9020;&#x51FD;&#x6570;</h2>
+<p>&#x4F7F;&#x7528;&#x65F6;&#xFF0C;&#x9996;&#x5148;&#x4F7F;&#x7528;<code>MutationObserver</code>&#x6784;&#x9020;&#x51FD;&#x6570;&#xFF0C;&#x65B0;&#x5EFA;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x5668;&#x5B9E;&#x4F8B;&#xFF0C;&#x540C;&#x65F6;&#x6307;&#x5B9A;&#x8FD9;&#x4E2A;&#x5B9E;&#x4F8B;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> observer = <span class="hljs-keyword">new</span> MutationObserver(callback);
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#x7684;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#xFF0C;&#x4F1A;&#x5728;&#x6BCF;&#x6B21; DOM &#x53D8;&#x52A8;&#x540E;&#x8C03;&#x7528;&#x3002;&#x8BE5;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x53D8;&#x52A8;&#x6570;&#x7EC4;&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x662F;&#x89C2;&#x5BDF;&#x5668;&#x5B9E;&#x4F8B;&#xFF0C;&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> observer = <span class="hljs-keyword">new</span> MutationObserver(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">mutations, observer</span>) </span>{
+  mutations.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">mutation</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(mutation);
+  });
+});
+</code></pre>
+<h2 id="mutationobserver-&#x7684;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;">MutationObserver &#x7684;&#x5B9E;&#x4F8B;&#x65B9;&#x6CD5;</h2>
+<h3 id="observe">observe()</h3>
+<p><code>observe</code>&#x65B9;&#x6CD5;&#x7528;&#x6765;&#x542F;&#x52A8;&#x76D1;&#x542C;&#xFF0C;&#x5B83;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#x3002;</p>
+<ul>
+<li>&#x7B2C;&#x4E00;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x6240;&#x8981;&#x89C2;&#x5BDF;&#x7684; DOM &#x8282;&#x70B9;</li>
+<li>&#x7B2C;&#x4E8C;&#x4E2A;&#x53C2;&#x6570;&#xFF1A;&#x4E00;&#x4E2A;&#x914D;&#x7F6E;&#x5BF9;&#x8C61;&#xFF0C;&#x6307;&#x5B9A;&#x6240;&#x8981;&#x89C2;&#x5BDF;&#x7684;&#x7279;&#x5B9A;&#x53D8;&#x52A8;</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> article = <span class="hljs-built_in">document</span>.querySelector(<span class="hljs-string">&apos;article&apos;</span>);
+
+<span class="hljs-keyword">var</span>  options = {
+  <span class="hljs-string">&apos;childList&apos;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&apos;attributes&apos;</span>:<span class="hljs-literal">true</span>
+} ;
+
+observer.observe(article, options);
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;<code>observe</code>&#x65B9;&#x6CD5;&#x63A5;&#x53D7;&#x4E24;&#x4E2A;&#x53C2;&#x6570;&#xFF0C;&#x7B2C;&#x4E00;&#x4E2A;&#x662F;&#x6240;&#x8981;&#x89C2;&#x5BDF;&#x7684;DOM&#x5143;&#x7D20;&#x662F;<code>article</code>&#xFF0C;&#x7B2C;&#x4E8C;&#x4E2A;&#x662F;&#x6240;&#x8981;&#x89C2;&#x5BDF;&#x7684;&#x53D8;&#x52A8;&#x7C7B;&#x578B;&#xFF08;&#x5B50;&#x8282;&#x70B9;&#x53D8;&#x52A8;&#x548C;&#x5C5E;&#x6027;&#x53D8;&#x52A8;&#xFF09;&#x3002;</p>
+<p>&#x89C2;&#x5BDF;&#x5668;&#x6240;&#x80FD;&#x89C2;&#x5BDF;&#x7684; DOM &#x53D8;&#x52A8;&#x7C7B;&#x578B;&#xFF08;&#x5373;&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x7684;<code>options</code>&#x5BF9;&#x8C61;&#xFF09;&#xFF0C;&#x6709;&#x4EE5;&#x4E0B;&#x51E0;&#x79CD;&#x3002;</p>
+<ul>
+<li><strong>childList</strong>&#xFF1A;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x53D8;&#x52A8;&#xFF08;&#x6307;&#x65B0;&#x589E;&#xFF0C;&#x5220;&#x9664;&#x6216;&#x8005;&#x66F4;&#x6539;&#xFF09;&#x3002;</li>
+<li><strong>attributes</strong>&#xFF1A;&#x5C5E;&#x6027;&#x7684;&#x53D8;&#x52A8;&#x3002;</li>
+<li><strong>characterData</strong>&#xFF1A;&#x8282;&#x70B9;&#x5185;&#x5BB9;&#x6216;&#x8282;&#x70B9;&#x6587;&#x672C;&#x7684;&#x53D8;&#x52A8;&#x3002;</li>
+</ul>
+<p>&#x60F3;&#x8981;&#x89C2;&#x5BDF;&#x54EA;&#x4E00;&#x79CD;&#x53D8;&#x52A8;&#x7C7B;&#x578B;&#xFF0C;&#x5C31;&#x5728;<code>option</code>&#x5BF9;&#x8C61;&#x4E2D;&#x6307;&#x5B9A;&#x5B83;&#x7684;&#x503C;&#x4E3A;<code>true</code>&#x3002;&#x9700;&#x8981;&#x6CE8;&#x610F;&#x7684;&#x662F;&#xFF0C;&#x5FC5;&#x987B;&#x540C;&#x65F6;&#x6307;&#x5B9A;<code>childList</code>&#x3001;<code>attributes</code>&#x548C;<code>characterData</code>&#x4E2D;&#x7684;&#x4E00;&#x79CD;&#x6216;&#x591A;&#x79CD;&#xFF0C;&#x82E5;&#x672A;&#x5747;&#x6307;&#x5B9A;&#x5C06;&#x62A5;&#x9519;&#x3002;</p>
+<p>&#x9664;&#x4E86;&#x53D8;&#x52A8;&#x7C7B;&#x578B;&#xFF0C;<code>options</code>&#x5BF9;&#x8C61;&#x8FD8;&#x53EF;&#x4EE5;&#x8BBE;&#x5B9A;&#x4EE5;&#x4E0B;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><code>subtree</code>&#xFF1A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x662F;&#x5426;&#x5C06;&#x8BE5;&#x89C2;&#x5BDF;&#x5668;&#x5E94;&#x7528;&#x4E8E;&#x8BE5;&#x8282;&#x70B9;&#x7684;&#x6240;&#x6709;&#x540E;&#x4EE3;&#x8282;&#x70B9;&#x3002;</li>
+<li><code>attributeOldValue</code>&#xFF1A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x89C2;&#x5BDF;<code>attributes</code>&#x53D8;&#x52A8;&#x65F6;&#xFF0C;&#x662F;&#x5426;&#x9700;&#x8981;&#x8BB0;&#x5F55;&#x53D8;&#x52A8;&#x524D;&#x7684;&#x5C5E;&#x6027;&#x503C;&#x3002;</li>
+<li><code>characterDataOldValue</code>&#xFF1A;&#x5E03;&#x5C14;&#x503C;&#xFF0C;&#x8868;&#x793A;&#x89C2;&#x5BDF;<code>characterData</code>&#x53D8;&#x52A8;&#x65F6;&#xFF0C;&#x662F;&#x5426;&#x9700;&#x8981;&#x8BB0;&#x5F55;&#x53D8;&#x52A8;&#x524D;&#x7684;&#x503C;&#x3002;</li>
+<li><code>attributeFilter</code>&#xFF1A;&#x6570;&#x7EC4;&#xFF0C;&#x8868;&#x793A;&#x9700;&#x8981;&#x89C2;&#x5BDF;&#x7684;&#x7279;&#x5B9A;&#x5C5E;&#x6027;&#xFF08;&#x6BD4;&#x5982;<code>[&apos;class&apos;,&apos;src&apos;]</code>&#xFF09;&#x3002;</li>
+</ul>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x5F00;&#x59CB;&#x76D1;&#x542C;&#x6587;&#x6863;&#x6839;&#x8282;&#x70B9;&#xFF08;&#x5373;&lt;html&gt;&#x6807;&#x7B7E;&#xFF09;&#x7684;&#x53D8;&#x52A8;</span>
+mutationObserver.observe(<span class="hljs-built_in">document</span>.documentElement, {
+  attributes: <span class="hljs-literal">true</span>,
+  characterData: <span class="hljs-literal">true</span>,
+  childList: <span class="hljs-literal">true</span>,
+  subtree: <span class="hljs-literal">true</span>,
+  attributeOldValue: <span class="hljs-literal">true</span>,
+  characterDataOldValue: <span class="hljs-literal">true</span>
+});
+</code></pre>
+<p>&#x5BF9;&#x4E00;&#x4E2A;&#x8282;&#x70B9;&#x6DFB;&#x52A0;&#x89C2;&#x5BDF;&#x5668;&#xFF0C;&#x5C31;&#x50CF;&#x4F7F;&#x7528;<code>addEventListener</code>&#x65B9;&#x6CD5;&#x4E00;&#x6837;&#xFF0C;&#x591A;&#x6B21;&#x6DFB;&#x52A0;&#x540C;&#x4E00;&#x4E2A;&#x89C2;&#x5BDF;&#x5668;&#x662F;&#x65E0;&#x6548;&#x7684;&#xFF0C;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4F9D;&#x7136;&#x53EA;&#x4F1A;&#x89E6;&#x53D1;&#x4E00;&#x6B21;&#x3002;&#x4F46;&#x662F;&#xFF0C;&#x5982;&#x679C;&#x6307;&#x5B9A;&#x4E0D;&#x540C;&#x7684;<code>options</code>&#x5BF9;&#x8C61;&#xFF0C;&#x5C31;&#x4F1A;&#x88AB;&#x5F53;&#x4F5C;&#x4E24;&#x4E2A;&#x4E0D;&#x540C;&#x7684;&#x89C2;&#x5BDF;&#x5668;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x662F;&#x89C2;&#x5BDF;&#x65B0;&#x589E;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> insertedNodes = [];
+<span class="hljs-keyword">var</span> observer = <span class="hljs-keyword">new</span> MutationObserver(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">mutations</span>) </span>{
+  mutations.forEach(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">mutation</span>) </span>{
+    <span class="hljs-keyword">for</span> (<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; mutation.addedNodes.length; i++)
+      insertedNodes.push(mutation.addedNodes[i]);
+  })
+});
+observer.observe(<span class="hljs-built_in">document</span>, { childList: <span class="hljs-literal">true</span> });
+<span class="hljs-built_in">console</span>.log(insertedNodes);
+</code></pre>
+<h3 id="disconnect&#xFF0C;takerecords&#xFF08;&#xFF09;">disconnect()&#xFF0C;takeRecords&#xFF08;&#xFF09;</h3>
+<p><code>disconnect</code>&#x65B9;&#x6CD5;&#x7528;&#x6765;&#x505C;&#x6B62;&#x89C2;&#x5BDF;&#x3002;&#x8C03;&#x7528;&#x8BE5;&#x65B9;&#x6CD5;&#x540E;&#xFF0C;DOM &#x518D;&#x53D1;&#x751F;&#x53D8;&#x52A8;&#xFF0C;&#x4E5F;&#x4E0D;&#x4F1A;&#x89E6;&#x53D1;&#x89C2;&#x5BDF;&#x5668;&#x3002;</p>
+<pre><code class="lang-javascript">observer.disconnect();
+</code></pre>
+<p><code>takeRecords</code>&#x65B9;&#x6CD5;&#x7528;&#x6765;&#x6E05;&#x9664;&#x53D8;&#x52A8;&#x8BB0;&#x5F55;&#xFF0C;&#x5373;&#x4E0D;&#x518D;&#x5904;&#x7406;&#x672A;&#x5904;&#x7406;&#x7684;&#x53D8;&#x52A8;&#x3002;&#x8BE5;&#x65B9;&#x6CD5;&#x8FD4;&#x56DE;&#x53D8;&#x52A8;&#x8BB0;&#x5F55;&#x7684;&#x6570;&#x7EC4;&#x3002;</p>
+<pre><code class="lang-javascript">observer.takeRecords();
+</code></pre>
+<p>&#x4E0B;&#x9762;&#x662F;&#x4E00;&#x4E2A;&#x4F8B;&#x5B50;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-comment">// &#x4FDD;&#x5B58;&#x6240;&#x6709;&#x6CA1;&#x6709;&#x88AB;&#x89C2;&#x5BDF;&#x5668;&#x5904;&#x7406;&#x7684;&#x53D8;&#x52A8;</span>
+<span class="hljs-keyword">var</span> changes = mutationObserver.takeRecords();
+
+<span class="hljs-comment">// &#x505C;&#x6B62;&#x89C2;&#x5BDF;</span>
+mutationObserver.disconnect();
+</code></pre>
+<h2 id="mutationrecord-&#x5BF9;&#x8C61;">MutationRecord &#x5BF9;&#x8C61;</h2>
+<p>DOM &#x6BCF;&#x6B21;&#x53D1;&#x751F;&#x53D8;&#x5316;&#xFF0C;&#x5C31;&#x4F1A;&#x751F;&#x6210;&#x4E00;&#x6761;&#x53D8;&#x52A8;&#x8BB0;&#x5F55;&#xFF08;MutationRecord &#x5B9E;&#x4F8B;&#xFF09;&#x3002;&#x8BE5;&#x5B9E;&#x4F8B;&#x5305;&#x542B;&#x4E86;&#x4E0E;&#x53D8;&#x52A8;&#x76F8;&#x5173;&#x7684;&#x6240;&#x6709;&#x4FE1;&#x606F;&#x3002;Mutation Observer &#x5904;&#x7406;&#x7684;&#x5C31;&#x662F;&#x4E00;&#x4E2A;&#x4E2A;<code>MutationRecord</code>&#x5B9E;&#x4F8B;&#x6240;&#x7EC4;&#x6210;&#x7684;&#x6570;&#x7EC4;&#x3002;</p>
+<p><code>MutationRecord</code>&#x5BF9;&#x8C61;&#x5305;&#x542B;&#x4E86;DOM&#x7684;&#x76F8;&#x5173;&#x4FE1;&#x606F;&#xFF0C;&#x6709;&#x5982;&#x4E0B;&#x5C5E;&#x6027;&#xFF1A;</p>
+<ul>
+<li><code>type</code>&#xFF1A;&#x89C2;&#x5BDF;&#x7684;&#x53D8;&#x52A8;&#x7C7B;&#x578B;&#xFF08;<code>attributes</code>&#x3001;<code>characterData</code>&#x6216;&#x8005;<code>childList</code>&#xFF09;&#x3002;</li>
+<li><code>target</code>&#xFF1A;&#x53D1;&#x751F;&#x53D8;&#x52A8;&#x7684;DOM&#x8282;&#x70B9;&#x3002;</li>
+<li><code>addedNodes</code>&#xFF1A;&#x65B0;&#x589E;&#x7684;DOM&#x8282;&#x70B9;&#x3002;</li>
+<li><code>removedNodes</code>&#xFF1A;&#x5220;&#x9664;&#x7684;DOM&#x8282;&#x70B9;&#x3002;</li>
+<li><code>previousSibling</code>&#xFF1A;&#x524D;&#x4E00;&#x4E2A;&#x540C;&#x7EA7;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x8FD4;&#x56DE;<code>null</code>&#x3002;</li>
+<li><code>nextSibling</code>&#xFF1A;&#x4E0B;&#x4E00;&#x4E2A;&#x540C;&#x7EA7;&#x8282;&#x70B9;&#xFF0C;&#x5982;&#x679C;&#x6CA1;&#x6709;&#x5219;&#x8FD4;&#x56DE;<code>null</code>&#x3002;</li>
+<li><code>attributeName</code>&#xFF1A;&#x53D1;&#x751F;&#x53D8;&#x52A8;&#x7684;&#x5C5E;&#x6027;&#x3002;&#x5982;&#x679C;&#x8BBE;&#x7F6E;&#x4E86;<code>attributeFilter</code>&#xFF0C;&#x5219;&#x53EA;&#x8FD4;&#x56DE;&#x9884;&#x5148;&#x6307;&#x5B9A;&#x7684;&#x5C5E;&#x6027;&#x3002;</li>
+<li><code>oldValue</code>&#xFF1A;&#x53D8;&#x52A8;&#x524D;&#x7684;&#x503C;&#x3002;&#x8FD9;&#x4E2A;&#x5C5E;&#x6027;&#x53EA;&#x5BF9;<code>attribute</code>&#x548C;<code>characterData</code>&#x53D8;&#x52A8;&#x6709;&#x6548;&#xFF0C;&#x5982;&#x679C;&#x53D1;&#x751F;<code>childList</code>&#x53D8;&#x52A8;&#xFF0C;&#x5219;&#x8FD4;&#x56DE;<code>null</code>&#x3002;</li>
+</ul>
+<h2 id="&#x5E94;&#x7528;&#x793A;&#x4F8B;">&#x5E94;&#x7528;&#x793A;&#x4F8B;</h2>
+<h3 id="&#x5B50;&#x5143;&#x7D20;&#x7684;&#x53D8;&#x52A8;">&#x5B50;&#x5143;&#x7D20;&#x7684;&#x53D8;&#x52A8;</h3>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x8BF4;&#x660E;&#x5982;&#x4F55;&#x8BFB;&#x53D6;&#x53D8;&#x52A8;&#x8BB0;&#x5F55;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> callback = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">records</span>)</span>{
+  records.map(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">record</span>)</span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Mutation type: &apos;</span> + record.type);
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Mutation target: &apos;</span> + record.target);
+  });
+};
+
+<span class="hljs-keyword">var</span> mo = <span class="hljs-keyword">new</span> MutationObserver(callback);
+
+<span class="hljs-keyword">var</span> option = {
+  <span class="hljs-string">&apos;childList&apos;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&apos;subtree&apos;</span>: <span class="hljs-literal">true</span>
+};
+
+mo.observe(<span class="hljs-built_in">document</span>.body, option);
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x7684;&#x89C2;&#x5BDF;&#x5668;&#xFF0C;&#x89C2;&#x5BDF;<code>&lt;body&gt;</code>&#x7684;&#x6240;&#x6709;&#x4E0B;&#x7EA7;&#x8282;&#x70B9;&#xFF08;<code>childList</code>&#x8868;&#x793A;&#x89C2;&#x5BDF;&#x5B50;&#x8282;&#x70B9;&#xFF0C;<code>subtree</code>&#x8868;&#x793A;&#x89C2;&#x5BDF;&#x540E;&#x4EE3;&#x8282;&#x70B9;&#xFF09;&#x7684;&#x53D8;&#x52A8;&#x3002;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x4F1A;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x663E;&#x793A;&#x6240;&#x6709;&#x53D8;&#x52A8;&#x7684;&#x7C7B;&#x578B;&#x548C;&#x76EE;&#x6807;&#x8282;&#x70B9;&#x3002;</p>
+<h3 id="&#x5C5E;&#x6027;&#x7684;&#x53D8;&#x52A8;">&#x5C5E;&#x6027;&#x7684;&#x53D8;&#x52A8;</h3>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4F8B;&#x5B50;&#x8BF4;&#x660E;&#x5982;&#x4F55;&#x8FFD;&#x8E2A;&#x5C5E;&#x6027;&#x7684;&#x53D8;&#x52A8;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> callback = <span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">records</span>) </span>{
+  records.map(<span class="hljs-function"><span class="hljs-keyword">function</span> (<span class="hljs-params">record</span>) </span>{
+    <span class="hljs-built_in">console</span>.log(<span class="hljs-string">&apos;Previous attribute value: &apos;</span> + record.oldValue);
+  });
+};
+
+<span class="hljs-keyword">var</span> mo = <span class="hljs-keyword">new</span> MutationObserver(callback);
+
+<span class="hljs-keyword">var</span> element = <span class="hljs-built_in">document</span>.getElementById(<span class="hljs-string">&apos;#my_element&apos;</span>);
+
+<span class="hljs-keyword">var</span> options = {
+  <span class="hljs-string">&apos;attributes&apos;</span>: <span class="hljs-literal">true</span>,
+  <span class="hljs-string">&apos;attributeOldValue&apos;</span>: <span class="hljs-literal">true</span>
+}
+
+mo.observe(element, options);
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x5148;&#x8BBE;&#x5B9A;&#x8FFD;&#x8E2A;&#x5C5E;&#x6027;&#x53D8;&#x52A8;&#xFF08;<code>&apos;attributes&apos;: true</code>&#xFF09;&#xFF0C;&#x7136;&#x540E;&#x8BBE;&#x5B9A;&#x8BB0;&#x5F55;&#x53D8;&#x52A8;&#x524D;&#x7684;&#x503C;&#x3002;&#x5B9E;&#x9645;&#x53D1;&#x751F;&#x53D8;&#x52A8;&#x65F6;&#xFF0C;&#x4F1A;&#x5C06;&#x53D8;&#x52A8;&#x524D;&#x7684;&#x503C;&#x663E;&#x793A;&#x5728;&#x63A7;&#x5236;&#x53F0;&#x3002;</p>
+<h3 id="&#x53D6;&#x4EE3;-domcontentloaded-&#x4E8B;&#x4EF6;">&#x53D6;&#x4EE3; DOMContentLoaded &#x4E8B;&#x4EF6;</h3>
+<p>&#x7F51;&#x9875;&#x52A0;&#x8F7D;&#x7684;&#x65F6;&#x5019;&#xFF0C;DOM &#x8282;&#x70B9;&#x7684;&#x751F;&#x6210;&#x4F1A;&#x4EA7;&#x751F;&#x53D8;&#x52A8;&#x8BB0;&#x5F55;&#xFF0C;&#x56E0;&#x6B64;&#x53EA;&#x8981;&#x89C2;&#x5BDF; DOM &#x7684;&#x53D8;&#x52A8;&#xFF0C;&#x5C31;&#x80FD;&#x5728;&#x7B2C;&#x4E00;&#x65F6;&#x95F4;&#x89E6;&#x53D1;&#x76F8;&#x5173;&#x4E8B;&#x4EF6;&#xFF0C;&#x56E0;&#x6B64;&#x4E5F;&#x5C31;&#x6CA1;&#x6709;&#x5FC5;&#x8981;&#x4F7F;&#x7528;<code>DOMContentLoaded</code>&#x4E8B;&#x4EF6;&#x3002;</p>
+<pre><code class="lang-javascript"><span class="hljs-keyword">var</span> observer = <span class="hljs-keyword">new</span> MutationObserver(callback);
+observer.observe(<span class="hljs-built_in">document</span>.documentElement, {
+  childList: <span class="hljs-literal">true</span>,
+  subtree: <span class="hljs-literal">true</span>
+});
+</code></pre>
+<p>&#x4E0A;&#x9762;&#x4EE3;&#x7801;&#x4E2D;&#xFF0C;&#x76D1;&#x542C;<code>document.documentElement</code>&#xFF08;&#x5373;HTML&#x8282;&#x70B9;&#xFF09;&#x7684;&#x5B50;&#x8282;&#x70B9;&#x7684;&#x53D8;&#x52A8;&#xFF0C;<code>subtree</code>&#x5C5E;&#x6027;&#x6307;&#x5B9A;&#x76D1;&#x542C;&#x8FD8;&#x5305;&#x62EC;&#x540E;&#x4EE3;&#x8282;&#x70B9;&#x3002;&#x56E0;&#x6B64;&#xFF0C;&#x4EFB;&#x610F;&#x4E00;&#x4E2A;&#x7F51;&#x9875;&#x5143;&#x7D20;&#x4E00;&#x65E6;&#x751F;&#x6210;&#xFF0C;&#x5C31;&#x80FD;&#x7ACB;&#x523B;&#x88AB;&#x76D1;&#x542C;&#x5230;&#x3002;</p>
+<p>&#x4E0B;&#x9762;&#x7684;&#x4EE3;&#x7801;&#xFF0C;&#x4F7F;&#x7528;<code>MutationObserver</code>&#x5BF9;&#x8C61;&#x5C01;&#x88C5;&#x4E00;&#x4E2A;&#x76D1;&#x542C; DOM &#x751F;&#x6210;&#x7684;&#x51FD;&#x6570;&#x3002;</p>
+<pre><code class="lang-javascript">(<span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">win</span>)</span>{
+<span class="hljs-meta">  &apos;use strict&apos;</span>;
+
+  <span class="hljs-keyword">var</span> listeners = [];
+  <span class="hljs-keyword">var</span> doc = win.document;
+  <span class="hljs-keyword">var</span> MutationObserver = win.MutationObserver || win.WebKitMutationObserver;
+  <span class="hljs-keyword">var</span> observer;
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">ready</span>(<span class="hljs-params">selector, fn</span>)</span>{
+    <span class="hljs-comment">// &#x50A8;&#x5B58;&#x9009;&#x62E9;&#x5668;&#x548C;&#x56DE;&#x8C03;&#x51FD;&#x6570;</span>
+    listeners.push({
+      selector: selector,
+      fn: fn
+    });
+    <span class="hljs-keyword">if</span>(!observer){
+      <span class="hljs-comment">// &#x76D1;&#x542C;document&#x53D8;&#x5316;</span>
+      observer = <span class="hljs-keyword">new</span> MutationObserver(check);
+      observer.observe(doc.documentElement, {
+        childList: <span class="hljs-literal">true</span>,
+        subtree: <span class="hljs-literal">true</span>
+      });
+    }
+    <span class="hljs-comment">// &#x68C0;&#x67E5;&#x8BE5;&#x8282;&#x70B9;&#x662F;&#x5426;&#x5DF2;&#x7ECF;&#x5728;DOM&#x4E2D;</span>
+    check();
+  }
+
+  <span class="hljs-function"><span class="hljs-keyword">function</span> <span class="hljs-title">check</span>(<span class="hljs-params"></span>)</span>{
+  <span class="hljs-comment">// &#x68C0;&#x67E5;&#x662F;&#x5426;&#x5339;&#x914D;&#x5DF2;&#x50A8;&#x5B58;&#x7684;&#x8282;&#x70B9;</span>
+    <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> i = <span class="hljs-number">0</span>; i &lt; listeners.length; i++){
+      <span class="hljs-keyword">var</span> listener = listeners[i];
+      <span class="hljs-comment">// &#x68C0;&#x67E5;&#x6307;&#x5B9A;&#x8282;&#x70B9;&#x662F;&#x5426;&#x6709;&#x5339;&#x914D;</span>
+      <span class="hljs-keyword">var</span> elements = doc.querySelectorAll(listener.selector);
+      <span class="hljs-keyword">for</span>(<span class="hljs-keyword">var</span> j = <span class="hljs-number">0</span>; j &lt; elements.length; j++){
+        <span class="hljs-keyword">var</span> element = elements[j];
+        <span class="hljs-comment">// &#x786E;&#x4FDD;&#x56DE;&#x8C03;&#x51FD;&#x6570;&#x53EA;&#x4F1A;&#x5BF9;&#x8BE5;&#x5143;&#x7D20;&#x8C03;&#x7528;&#x4E00;&#x6B21;</span>
+        <span class="hljs-keyword">if</span>(!element.ready){
+          element.ready = <span class="hljs-literal">true</span>;
+          <span class="hljs-comment">// &#x5BF9;&#x8BE5;&#x8282;&#x70B9;&#x8C03;&#x7528;&#x56DE;&#x8C03;&#x51FD;&#x6570;</span>
+          listener.fn.call(element, element);
+        }
+      }
+    }
+  }
+
+  <span class="hljs-comment">// &#x5BF9;&#x5916;&#x66B4;&#x9732;ready</span>
+  win.ready = ready;
+
+})(<span class="hljs-keyword">this</span>);
+
+ready(<span class="hljs-string">&apos;.foo&apos;</span>, <span class="hljs-function"><span class="hljs-keyword">function</span>(<span class="hljs-params">element</span>)</span>{
+  <span class="hljs-comment">// ...</span>
+});
+</code></pre>
+<h2 id="&#x53C2;&#x8003;&#x94FE;&#x63A5;">&#x53C2;&#x8003;&#x94FE;&#x63A5;</h2>
+<ul>
+<li>Paul Kinlan, <a href="https://developers.google.com/web/updates/2012/02/Detect-DOM-changes-with-Mutation-Observers" target="_blank">Detect DOM changes with Mutation Observers</a></li>
+<li>Tiffany Brown, <a href="http://dev.opera.com/articles/view/mutation-observers-tutorial/" target="_blank">Getting to know mutation observers</a></li>
+<li>Michal Budzynski, <a href="http://michalbe.blogspot.com/2013/04/javascript-less-known-parts-dom.html" target="_blank">JavaScript: The less known parts. DOM Mutations</a></li>
+<li>Jeff Griffiths, <a href="https://hacks.mozilla.org/2012/05/dom-mutationobserver-reacting-to-dom-changes-without-killing-browser-performance/" target="_blank">DOM MutationObserver &#x2013; reacting to DOM changes without killing browser performance</a></li>
+<li>Addy Osmani, <a href="http://addyosmani.com/blog/mutation-observers/" target="_blank">Detect, Undo And Redo DOM Changes With Mutation Observers</a></li>
+<li>Ryan Morr, <a href="http://ryanmorr.com/using-mutation-observers-to-watch-for-element-availability/" target="_blank">Using Mutation Observers to Watch for Element Availability</a></li>
+</ul>
+<footer class="page-footer"><span class="copyright">&#xA9; Tony all right reserved&#xFF0C;powered by Gitbook</span><span class="footer-modification">&#x8BE5;&#x6587;&#x4EF6;&#x4FEE;&#x8BA2;&#x65F6;&#x95F4;&#xFF1A;
+2019-5-15 11:35:02
+</span></footer></body></html>
+                                
+                                </section>
+                            
+    </div>
+    <div class="search-results">
+        <div class="has-results">
+            
+            <h1 class="search-results-title"><span class='search-results-count'></span> results matching "<span class='search-query'></span>"</h1>
+            <ul class="search-results-list"></ul>
+            
+        </div>
+        <div class="no-results">
+            
+            <h1 class="search-results-title">No results matching "<span class='search-query'></span>"</h1>
+            
+        </div>
+    </div>
+</div>
+
+                        </div>
+                    </div>
+                
+            </div>
+
+            
+                
+                <a href="css.html" class="navigation navigation-prev " aria-label="Previous page: CSS 操作">
+                    <i class="fa fa-angle-left"></i>
+                </a>
+                
+                
+                <a href="../events/eventtarget.html" class="navigation navigation-next " aria-label="Next page: 事件">
+                    <i class="fa fa-angle-right"></i>
+                </a>
+                
+            
+        
+    </div>
+
+    <script>
+        var gitbook = gitbook || [];
+        gitbook.push(function() {
+            gitbook.page.hasChanged({"page":{"title":"Mutation Observer API","level":"1.9.9","depth":2,"next":{"title":"事件","level":"1.10","depth":1,"path":"docs/events/eventtarget.md","ref":"docs/events/eventtarget.md","articles":[{"title":"事件模型","level":"1.10.1","depth":2,"path":"docs/events/model.md","ref":"docs/events/model.md","articles":[]},{"title":"Event 对象","level":"1.10.2","depth":2,"path":"docs/events/event.md","ref":"docs/events/event.md","articles":[]},{"title":"鼠标事件","level":"1.10.3","depth":2,"path":"docs/events/mouse.md","ref":"docs/events/mouse.md","articles":[]},{"title":"键盘事件","level":"1.10.4","depth":2,"path":"docs/events/keyboard.md","ref":"docs/events/keyboard.md","articles":[]},{"title":"进度事件","level":"1.10.5","depth":2,"path":"docs/events/progress.md","ref":"docs/events/progress.md","articles":[]},{"title":"表单事件","level":"1.10.6","depth":2,"path":"docs/events/form.md","ref":"docs/events/form.md","articles":[]},{"title":"触摸事件","level":"1.10.7","depth":2,"path":"docs/events/touch.md","ref":"docs/events/touch.md","articles":[]},{"title":"拖拉事件","level":"1.10.8","depth":2,"path":"docs/events/drag.md","ref":"docs/events/drag.md","articles":[]},{"title":"其他常见事件","level":"1.10.9","depth":2,"path":"docs/events/common.md","ref":"docs/events/common.md","articles":[]},{"title":"GlobalEventHandlers 接口","level":"1.10.10","depth":2,"path":"docs/events/globaleventhandlers.md","ref":"docs/events/globaleventhandlers.md","articles":[]}]},"previous":{"title":"CSS 操作","level":"1.9.8","depth":2,"path":"docs/dom/css.md","ref":"docs/dom/css.md","articles":[]},"dir":"ltr"},"config":{"plugins":["splitter","chapter-fold","code","favicon","tbfed-pagefooter","-sharing","sharing-plus","github","github-buttons","lightbox"],"styles":{"website":"/source/css/website.css"},"pluginsConfig":{"tbfed-pagefooter":{"copyright":"&copy Tony","modify_label":"该文件修订时间：","modify_format":"2019-5-15 11:35:02"},"chapter-fold":{},"github":{"url":"https://github.com/Tony-Code"},"splitter":{},"search":{},"sharing-plus":{"qq":false,"all":["facebook","google","twitter","instapaper","linkedin","pocket","stumbleupon"],"douban":false,"facebook":true,"weibo":false,"instapaper":false,"whatsapp":false,"hatenaBookmark":false,"twitter":true,"messenger":false,"line":false,"vk":false,"pocket":true,"google":false,"viber":false,"stumbleupon":false,"qzone":false,"linkedin":false},"lunr":{"maxIndexSize":1000000,"ignoreSpecialCharacters":false},"code":{"copyButtons":true},"fontsettings":{"theme":"white","family":"sans","size":2},"highlight":{},"favicon":{"shortcut":"/source/images/favicon.ico","bookmark":"/source/images/favicon.ico","appleTouch":"/source/images/favicon.ico","appleTouchMore":{"120x120":"/source/images/favicon.ico","180x180":"/source/images/favicon.ico"}},"lightbox":{"jquery":true},"github-buttons":{"buttons":[{"user":"Tony-Code","repo":"javascript","type":"star","size":"small","count":true}]},"sharing":{"qq":false,"all":["weibo","qq","qzone","douban"],"douban":false,"facebook":true,"weibo":false,"twitter":true,"pocket":false,"google":true,"qzone":false},"theme-default":{"styles":{"website":"styles/website.css","pdf":"styles/pdf.css","epub":"styles/epub.css","mobi":"styles/mobi.css","ebook":"styles/ebook.css","print":"styles/print.css"},"showLevel":false}},"theme":"default","author":"tony","pdf":{"pageNumbers":true,"fontSize":12,"fontFamily":"Arial","paperSize":"a4","chapterMark":"pagebreak","pageBreaksBefore":"/","margin":{"right":62,"left":62,"top":56,"bottom":56}},"structure":{"langs":"LANGS.md","readme":"README.md","glossary":"GLOSSARY.md","summary":"SUMMARY.md"},"variables":{},"title":"JavaScript中文文档","language":"zh-hans","gitbook":"3.2.3","description":"JavaScript文档"},"file":{"path":"docs/dom/mutationobserver.md","mtime":"2019-01-09T00:43:22.000Z","type":"markdown"},"gitbook":{"version":"3.2.3","time":"2019-05-29T06:37:39.706Z"},"basePath":"../..","book":{"language":""}});
+        });
+    </script>
+</div>
+
+        
+    <script src="../../gitbook/gitbook.js"></script>
+    <script src="../../gitbook/theme.js"></script>
+    
+        
+        <script src="../../gitbook/gitbook-plugin-splitter/splitter.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-chapter-fold/chapter-fold.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-code/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-sharing-plus/buttons.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-github-buttons/plugin.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/jquery.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lightbox/lightbox.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search-engine.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-search/search.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/lunr.min.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-lunr/search-lunr.js"></script>
+        
+    
+        
+        <script src="../../gitbook/gitbook-plugin-fontsettings/fontsettings.js"></script>
+        
+    
+
+    </body>
+</html>
+
